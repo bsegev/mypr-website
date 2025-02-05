@@ -75,13 +75,18 @@ const icons = [
 export function FloatingIcons() {
   const [floatingIcons, setFloatingIcons] = useState<Icon[]>([])
   const [containerDimensions, setContainerDimensions] = useState({ width: 0, height: 0 })
+  const [isMobile, setIsMobile] = useState(true) // Start with mobile true to prevent flash
 
   useEffect(() => {
     const handleResize = () => {
-      setContainerDimensions({
-        width: window.innerWidth - 200,
-        height: window.innerHeight - 200
-      })
+      const mobile = window.innerWidth < 768
+      setIsMobile(mobile)
+      if (!mobile) {
+        setContainerDimensions({
+          width: window.innerWidth - 200,
+          height: window.innerHeight - 200
+        })
+      }
     }
 
     handleResize()
@@ -90,7 +95,7 @@ export function FloatingIcons() {
   }, [])
 
   useEffect(() => {
-    if (containerDimensions.width === 0) return
+    if (containerDimensions.width === 0 || isMobile) return
 
     const margin = 50
     const contentZone = {
@@ -100,33 +105,29 @@ export function FloatingIcons() {
       bottom: containerDimensions.height * 0.75
     }
 
-    // Adjusted positions to ensure all icons are accessible
     const zones = [
-      // Left column (3 icons) - Moved further out and spaced evenly
       { 
-        x: margin + 80,  // Increased distance from edge
-        y: contentZone.top + 100,  // More space from top
+        x: margin + 80,
+        y: contentZone.top + 100,
         side: 'left' as const
       },
       { 
-        x: margin + 120,  // Slightly indented for middle
+        x: margin + 120,
         y: (contentZone.top + contentZone.bottom) / 2,
         side: 'left' as const
       },
       { 
         x: margin + 80,
-        y: contentZone.bottom - 100,  // More space from bottom
+        y: contentZone.bottom - 100,
         side: 'left' as const
       },
-
-      // Right column (3 icons) - Mirror of left side
       { 
         x: containerDimensions.width - margin - 130,
         y: contentZone.top + 100,
         side: 'right' as const
       },
       { 
-        x: containerDimensions.width - margin - 170,  // Slightly indented
+        x: containerDimensions.width - margin - 170,
         y: (contentZone.top + contentZone.bottom) / 2,
         side: 'right' as const
       },
@@ -144,10 +145,13 @@ export function FloatingIcons() {
     }))
 
     setFloatingIcons(initializedIcons)
-  }, [containerDimensions])
+  }, [containerDimensions, isMobile])
+
+  // Don't render anything on mobile
+  if (isMobile) return null
 
   return (
-    <div className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden hidden md:block">
       <div className="absolute inset-[100px]">
         {floatingIcons.map((item) => (
           <FloatingIcon 
@@ -167,7 +171,7 @@ function FloatingIcon({
   label, 
   position, 
   side,
-  containerDimensions 
+  containerDimensions
 }: Icon & { 
   containerDimensions: { width: number; height: number };
   side: 'left' | 'right';
@@ -177,7 +181,7 @@ function FloatingIcon({
 
   useEffect(() => {
     if (containerDimensions.width > 0) {
-      const floatRange = 20 // Subtle movement
+      const floatRange = 20
       const xOffset = side === 'left' ? floatRange : -floatRange
 
       controls.start({
@@ -192,7 +196,7 @@ function FloatingIcon({
           position.y
         ],
         transition: {
-          duration: 8 + (id % 3), // Slightly different timing for each icon
+          duration: 8 + (id % 3),
           repeat: Infinity,
           repeatType: "mirror",
           ease: "easeInOut"
