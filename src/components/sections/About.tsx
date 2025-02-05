@@ -6,10 +6,21 @@ import { Button } from '@/components/ui/Button'
 import { useRef } from 'react'
 import Image from 'next/image'
 
-const fadeIn = {
+const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8 }
+}
+
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
 }
 
 export default function About() {
@@ -28,42 +39,39 @@ export default function About() {
     <section 
       ref={sectionRef}
       className="relative py-32 overflow-hidden bg-silver-100"
-      style={{
-        opacity: isInView ? 1 : 0,
-        transition: 'opacity 0.5s'
-      }}
     >
-      {/* Subtle shirt texture pattern */}
-      <div className="absolute inset-0 bg-shirt-texture opacity-5" />
-      
-      {/* Decorative elements */}
-      <div className="absolute inset-0">
+      {/* Background fades in */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isInView ? 1 : 0 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0"
+      >
+        <div className="absolute inset-0 bg-shirt-texture opacity-5" />
         <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
         <div className="absolute bottom-0 w-full h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
-      </div>
+      </motion.div>
 
       <Container className="relative">
         <motion.div
+          variants={containerVariants}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-12 md:gap-20 items-center"
         >
-          {/* Left Column - Image */}
+          {/* Image fades and slides in */}
           <motion.div 
-            variants={fadeIn}
+            variants={fadeInUp}
             className="relative aspect-[4/5]"
           >
-            {/* Image Container with Decorative Elements */}
             <div className="relative w-full h-full">
-              {/* Background Pattern */}
-              <div className="absolute -top-4 -right-4 bottom-4 left-4 bg-black-900/5 rounded-lg" />
-              
-              {/* Border Frame */}
-              <div className="absolute -top-2 -right-2 bottom-2 left-2 border border-black-900/10 rounded-lg" />
-              
-              {/* Image */}
-              <div className="relative w-full h-full rounded-lg overflow-hidden">
+              <motion.div 
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.2 }}
+                className="relative w-full h-full rounded-lg overflow-hidden"
+              >
                 <Image
                   src="/images/my_image.jpg"
                   alt="Michael Yemini"
@@ -72,15 +80,13 @@ export default function About() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
-                {/* Subtle Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black-900/10" />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
 
-          {/* Right Column - Content */}
+          {/* Content fades in with stagger */}
           <div className="space-y-8">
-            <motion.div variants={fadeIn}>
+            <motion.div variants={fadeInUp}>
               <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
                 My Story
               </h2>
@@ -88,7 +94,7 @@ export default function About() {
             </motion.div>
 
             <motion.div 
-              variants={fadeIn}
+              variants={fadeInUp}
               className="space-y-6 text-lg text-black-900/80 font-inter font-light"
             >
               <p>
@@ -104,7 +110,7 @@ export default function About() {
             </motion.div>
 
             <motion.div 
-              variants={fadeIn}
+              variants={fadeInUp}
               className="pt-6 flex flex-col sm:flex-row items-start gap-6"
             >
               <Button 

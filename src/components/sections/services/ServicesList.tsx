@@ -89,10 +89,33 @@ const services = [
   }
 ]
 
-const fadeIn = {
+const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8 }
+}
+
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.3
+    }
+  }
+}
+
+const serviceVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.215, 0.61, 0.355, 1]
+    }
+  }
 }
 
 export function ServicesList() {
@@ -104,27 +127,40 @@ export function ServicesList() {
       id="services"
       className="relative py-32 bg-black-950"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
+      {/* Background with fade in */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0"
+      >
+        <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
+      </motion.div>
       
       <Container className="relative">
         <motion.div
+          variants={containerVariants}
           initial="initial"
           whileInView="animate"
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "-100px" }}
           className="space-y-24"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              variants={fadeIn}
+              variants={serviceVariants}
               className={`flex flex-col ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               } gap-12 md:gap-20 items-center`}
             >
               {/* Service Icon/Visual */}
               <div className="w-full md:w-1/3">
-                <div className="relative aspect-square rounded-lg p-8 border border-silver-400/10 overflow-hidden group transition-all duration-500 hover:border-silver-400/20">
+                <motion.div 
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  className="relative aspect-square rounded-lg p-8 border border-silver-400/10 overflow-hidden group transition-all duration-500 hover:border-silver-400/20"
+                >
                   {/* Background Image with Overlay */}
                   <div className="absolute inset-0">
                     <Image
@@ -134,38 +170,49 @@ export function ServicesList() {
                       height={600}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black-950/60 transition-opacity duration-500 group-hover:bg-black-950/50" /> {/* Lighter overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-black-900/40 to-transparent transition-opacity duration-500 group-hover:from-black-900/30" /> {/* Lighter gradient */}
+                    <motion.div 
+                      className="absolute inset-0 bg-black-950/60 transition-opacity duration-500 group-hover:bg-black-950/50"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-black-900/40 to-transparent" />
                   </div>
-                  
-                  {/* Texture */}
-                  <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
                   
                   {/* Icon Container */}
                   <div className="relative h-full flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-silver-400/20 to-transparent flex items-center justify-center text-silver-300 transition-transform duration-500 group-hover:scale-110 group-hover:from-silver-400/30">
+                    <motion.div 
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: index * 0.3 + 0.2 }}
+                      className="w-20 h-20 rounded-full bg-gradient-to-br from-silver-400/20 to-transparent flex items-center justify-center text-silver-300 transition-transform duration-500 group-hover:scale-110 group-hover:from-silver-400/30"
+                    >
                       {service.icon}
-                    </div>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
 
               {/* Service Content */}
               <div className="w-full md:w-2/3 space-y-8">
-                <div>
+                <motion.div
+                  variants={fadeInUp}
+                >
                   <h3 className="text-2xl md:text-3xl font-montserrat font-light tracking-wide text-silver-100 mb-4">
                     {service.title}
                   </h3>
                   <p className="text-lg text-silver-400 font-inter font-light">
                     {service.description}
                   </p>
-                </div>
+                </motion.div>
 
                 {/* Service Details */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {service.details.map((detail) => (
-                    <div 
+                  {service.details.map((detail, detailIndex) => (
+                    <motion.div 
                       key={detail.title}
+                      variants={fadeInUp}
+                      custom={detailIndex}
                       className="group relative p-6 rounded-lg bg-black-900/50 border border-silver-400/10 hover:border-silver-400/20 transition-colors"
                     >
                       <h4 className="text-silver-200 font-montserrat text-lg mb-2">
@@ -174,8 +221,13 @@ export function ServicesList() {
                       <p className="text-silver-400 font-inter font-light text-sm leading-relaxed">
                         {detail.description}
                       </p>
-                      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </div>
+                      <motion.div 
+                        className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent"
+                        initial={{ scaleX: 0 }}
+                        whileHover={{ scaleX: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -185,10 +237,16 @@ export function ServicesList() {
       </Container>
 
       {/* Bottom Accent */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <motion.div 
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="absolute bottom-0 left-0 right-0"
+      >
         <div className="h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-silver-400/10 to-transparent" />
-      </div>
+      </motion.div>
     </section>
   )
 } 

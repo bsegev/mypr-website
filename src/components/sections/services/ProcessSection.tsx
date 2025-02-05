@@ -57,10 +57,33 @@ const processes = [
   }
 ]
 
-const fadeIn = {
+const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.8 }
+}
+
+const containerVariants = {
+  initial: { opacity: 0 },
+  animate: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.2
+    }
+  }
+}
+
+const processVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.215, 0.61, 0.355, 1]
+    }
+  }
 }
 
 export function ProcessSection() {
@@ -76,17 +99,21 @@ export function ProcessSection() {
       ref={sectionRef}
       className="relative py-32 overflow-hidden bg-silver-100"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-shirt-texture opacity-5" />
-      
-      {/* Decorative elements */}
-      <div className="absolute inset-0">
+      {/* Background with fade in */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="absolute inset-0"
+      >
+        <div className="absolute inset-0 bg-shirt-texture opacity-5" />
         <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
         <div className="absolute bottom-0 w-full h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
-      </div>
+      </motion.div>
 
       <Container className="relative">
         <motion.div
+          variants={containerVariants}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true }}
@@ -94,7 +121,7 @@ export function ProcessSection() {
         >
           {/* Section Header */}
           <motion.div 
-            variants={fadeIn}
+            variants={fadeInUp}
             className="text-center space-y-4 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
@@ -107,43 +134,70 @@ export function ProcessSection() {
 
           {/* Process Steps */}
           <motion.div 
-            variants={fadeIn}
+            variants={fadeInUp}
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {processes.map((process, index) => (
-              <div 
+              <motion.div 
                 key={process.number}
+                variants={processVariants}
+                custom={index}
                 className="group relative"
               >
                 {/* Connector Line */}
                 {index < processes.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-[60%] right-0 h-px bg-gradient-to-r from-black-900/20 to-transparent" />
+                  <motion.div 
+                    className="hidden lg:block absolute top-8 left-[60%] right-0 h-px bg-gradient-to-r from-black-900/20 to-transparent"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: index * 0.2 }}
+                  />
                 )}
                 
                 {/* Process Card */}
-                <div className="relative p-8 rounded-lg bg-white shadow-sm border border-black-900/5 hover:border-black-900/10 transition-colors">
+                <div className="relative p-8 rounded-lg bg-white shadow-sm border border-black-900/5 hover:border-black-900/10 transition-all duration-300">
                   {/* Number */}
-                  <div className="absolute -top-4 left-8 bg-black-900 text-silver-100 text-sm font-montserrat tracking-wider px-3 py-1 rounded">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="absolute -top-4 left-8 bg-black-900 text-silver-100 text-sm font-montserrat tracking-wider px-3 py-1 rounded"
+                  >
                     {process.number}
-                  </div>
+                  </motion.div>
                   
                   {/* Icon */}
-                  <div className="w-12 h-12 mb-6 rounded-full bg-gradient-to-br from-black-900/10 to-transparent flex items-center justify-center text-black-900/60">
+                  <motion.div 
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="w-12 h-12 mb-6 rounded-full bg-gradient-to-br from-black-900/10 to-transparent flex items-center justify-center text-black-900/60"
+                  >
                     {process.icon}
-                  </div>
+                  </motion.div>
                   
                   {/* Content */}
-                  <h3 className="text-xl font-montserrat text-black-900 mb-3">
-                    {process.title}
-                  </h3>
-                  <p className="text-black-900/60 font-inter font-light leading-relaxed">
-                    {process.description}
-                  </p>
+                  <motion.div
+                    variants={fadeInUp}
+                    custom={index}
+                  >
+                    <h3 className="text-xl font-montserrat text-black-900 mb-3">
+                      {process.title}
+                    </h3>
+                    <p className="text-black-900/60 font-inter font-light leading-relaxed">
+                      {process.description}
+                    </p>
+                  </motion.div>
 
                   {/* Bottom Accent */}
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <motion.div 
+                    className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </motion.div>
