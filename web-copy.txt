@@ -1,0 +1,219 @@
+# Website Copy
+
+## Home Page
+
+### Hero Section
+Title: MYPR
+Headline: Strategic PR & Digital Consulting
+Main Text: 
+- Strategic PR
+- & Digital Consulting.
+
+Subheadline: Full-service public relations, crisis management, and digital strategy for business owners, CEOs, and communications leaders.
+
+Call-to-Actions:
+- Schedule a Consultation →
+- Learn More About MYPR →
+
+### Features Section
+Title: Expertise
+Subtitle: End-to-end solutions to elevate your communications strategy
+
+Features:
+1. Public Relations & Communications
+   - Crafting compelling narratives and managing your public image through targeted media channels.
+
+2. Digital & Social Strategy
+   - Managing your online presence through content creation, social media, and influencer collaborations.
+
+3. Crisis Management
+   - Transforming challenges into opportunities by protecting and enhancing your reputation.
+
+### Contact Section
+Title: Let's Connect
+Subtitle: Ready to elevate your communications strategy? Schedule a consultation or connect with me on LinkedIn.
+
+Call-to-Actions:
+- Schedule a Consultation →
+- Connect on LinkedIn
+
+Location:
+- Based in Tel Aviv, Israel
+- Operating Internationally
+
+## Services Page
+
+### Hero Section
+Title: Full-Service Strategic Solutions
+Categories: Public Relations • Communications Consulting • Digital Strategy
+
+Description: Crafting a strong public image and delivering your message through targeted media channels, while managing your digital presence and protecting your reputation.
+
+Call-to-Actions:
+- Explore Services ↓
+- Schedule a Consultation →
+
+### Services List
+
+1. PR Representative
+   Description: Your dedicated point of contact for all communications, managing media relations and public presence.
+   
+   Details:
+   - Media Relations: Your front-line spokesperson, handling press inquiries and proactively pitching stories to media.
+   - Public Communications: Creating and delivering press releases, statements, and public-facing materials that elevate your brand.
+   - Industry Networking: Building and maintaining relationships with key media contacts and industry stakeholders.
+
+2. Digital & Social Strategy
+   Description: Behind-the-scenes management of your digital presence to build and engage your audience.
+   
+   Details:
+   - Content Strategy: Crafting compelling content that builds authority and drives meaningful engagement.
+   - Platform Management: Day-to-day management of social media presence, including community engagement and influencer partnerships.
+   - Digital Campaigns: Creating and executing targeted campaigns with measurable results and clear ROI.
+
+3. Crisis Management
+   Description: Expert guidance and rapid response when challenges arise, protecting your reputation when it matters most.
+   
+   Details:
+   - Crisis Prevention: Identifying potential risks and developing proactive mitigation strategies.
+   - Rapid Response: 24/7 crisis support with immediate action plans and stakeholder communications.
+   - Reputation Recovery: Post-crisis reputation rebuilding and strategic communications planning.
+
+### Process Section
+Title: My Process
+Subtitle: Direct steps to strengthen your business communication
+
+Steps:
+1. Initial Consultation
+   Description: We discuss your goals and challenges. I analyze your current position and outline improvements.
+
+2. Creating Your Plan
+   Description: I develop a focused plan for your business. Direct solutions aligned with your needs and budget.
+
+3. Taking Action
+   Description: I execute the plan with regular updates. You stay informed about progress and impact.
+
+4. Getting Results
+   Description: We measure impact and adapt. Clear reporting shows how our work drives your business growth.
+
+### Contact Section
+Title: Book a Consultation
+Subtitle: Choose the service area you'd like to discuss and schedule a personalized consultation.
+
+Service Options:
+1. PR & Communications (45 min)
+   Description: Strategic communications planning and media relations consultation
+
+2. Digital Strategy (45 min)
+   Description: Social media and digital presence optimization discussion
+
+3. Crisis Management (60 min)
+   Description: Crisis prevention and reputation management planning
+
+Alternative Contact:
+- "Prefer to connect first?"
+- "Let's connect on LinkedIn" →
+
+## Call-to-Action Buttons
+
+1. Schedule a Consultation
+2. Explore Services
+3. Get in Touch
+4. Learn More About MYPR
+
+## About Page
+
+### Hero Section
+Title: Michael
+Subtitle: Your Strategic PR & Digital Consulting Partner
+
+Description: A communications consultant with proven expertise in public relations, crisis management, and digital strategy. Working with senior figures in Israeli politics, leading brands, and large organizations.
+
+Call-to-Actions:
+- My Story ↓
+- Get in Touch →
+
+### Story Section
+Title: Our Story
+Subtitle: MYPR – Your Strategic PR & Digital Consulting Partner
+
+Key Points:
+1. Proven Expertise
+   - Intensive, hands-on experience working with senior figures in Israeli politics, leading brands, and large organizations.
+
+2. Strategic Leadership
+   - Managing high-profile campaigns, resolving challenging media crises, and leading strategic initiatives at top PR agencies and digital management roles.
+
+3. Independent Journey
+   - Embarked on an independent path to provide business owners, CEOs, and communications leaders with personalized, precise, and practical solutions.
+
+Mission Statement:
+I empower leaders to communicate clearly, manage crises effectively, and build lasting public trust. At MYPR, I believe every challenge is an opportunity for growth—and I'm committed to turning that opportunity into a strategic advantage for your business.
+
+### Experience Section
+Title: Track Record
+Subtitle: Proven experience delivering results for industry leaders
+
+Statistics:
+- 5+ Years Experience
+- 25+ Crisis Cases
+- 50+ Media Campaigns
+- 20+ Industry Leaders
+
+Key Achievements:
+1. High-Profile Campaigns
+   - Managing strategic initiatives for leading brands and organizations
+
+2. Political Communications
+   - Working with senior figures in Israeli politics on strategic messaging
+
+3. Agency Leadership
+   - Leading strategic initiatives at top PR agencies and digital management roles
+
+Client Types:
+- Senior Figures in Israeli Politics
+- Leading Brands
+- Large Organizations
+- Business Owners & CEOs
+- Marketing Managers
+- Communications Leaders
+
+### Values Section
+Title: Our Values
+Subtitle: Core principles that guide our approach to delivering exceptional results
+
+Values:
+1. Clear Communication
+   - Direct, transparent dialogue that builds trust and drives results.
+
+2. Strategic Thinking
+   - Turning challenges into opportunities through careful analysis and planning.
+
+3. Personal Approach
+   - Tailored, one-on-one solutions that address your unique challenges.
+
+4. Crisis Expertise
+   - Proven ability to navigate and resolve challenging media situations.
+
+5. Results Driven
+   - Focus on delivering measurable impact and strategic advantage.
+
+6. Trusted Partner
+   - Building lasting relationships through reliability and excellence.
+
+### Contact Section
+Title: Get to Know Me
+Subtitle: Interested in learning more about my journey, methods, or how I can help your organization?
+
+Contact Options:
+1. Schedule a Consultation
+   - Let's discuss your communications goals and explore how we can work together.
+   - CTA: Book a Meeting
+
+2. Professional Network
+   - Connect with me on LinkedIn to stay updated on PR insights and opportunities.
+   - CTA: Connect on LinkedIn
+
+Location:
+- Based in Tel Aviv, Israel
+- Operating Internationally
