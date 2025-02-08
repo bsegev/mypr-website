@@ -26,6 +26,12 @@ export const metadata: Metadata = {
       }
     ]
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PR & Communications Services | Michael Yemini',
+    description: 'Strategic PR services, crisis management, and digital communications solutions.',
+    images: ['https://mypr-website.vercel.app/images/og_services.png'],
+  },
   alternates: {
     canonical: 'https://mypr.co.il/services'
   },

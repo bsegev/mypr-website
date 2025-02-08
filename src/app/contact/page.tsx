@@ -23,6 +23,12 @@ export const metadata: Metadata = {
       }
     ]
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Michael Yemini | PR & Digital Strategy',
+    description: 'Connect with Michael Yemini for strategic PR consulting and digital communications.',
+    images: ['https://mypr-website.vercel.app/images/og_contact.png'],
+  },
   alternates: {
     canonical: 'https://mypr.co.il/contact'
   },
