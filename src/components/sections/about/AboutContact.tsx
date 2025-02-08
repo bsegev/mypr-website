@@ -48,10 +48,10 @@ export function AboutContact() {
             variants={fadeIn}
             className="text-center space-y-4 mb-16"
           >
-            <h2 id="about-contact-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-black-900">
+            <h2 id="about-contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
               Get to Know Me
             </h2>
-            <p className="text-xl text-black-900/60 font-inter font-light max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-black-900/60 font-inter font-light max-w-2xl mx-auto">
               Interested in learning more about my journey, methods, or how I can help your organization?
             </p>
           </motion.div>
@@ -69,10 +69,10 @@ export function AboutContact() {
               role="listitem"
             >
               <div className="space-y-4">
-                <h3 className="text-xl font-montserrat text-black-900">
+                <h3 className="text-lg md:text-xl font-montserrat text-black-900">
                   Schedule a Consultation
                 </h3>
-                <p className="text-black-900/60 font-inter font-light">
+                <p className="text-body md:text-body-lg text-black-900/60 font-inter font-light">
                   Let&apos;s discuss your communications goals and explore how we can work together.
                 </p>
                 <Button 
@@ -93,7 +93,7 @@ export function AboutContact() {
               role="listitem"
             >
               <div className="space-y-4">
-                <h3 className="text-xl font-montserrat text-black-900">
+                <h3 className="text-lg md:text-xl font-montserrat text-black-900">
                   Professional Network
                 </h3>
                 <p className="text-black-900/60 font-inter font-light">

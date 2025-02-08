@@ -94,10 +94,10 @@ export function ServicesContact() {
             variants={fadeInUp}
             className="text-center space-y-4 mb-16"
           >
-            <h2 id="services-contact-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100">
+            <h2 id="services-contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
               Book a Consultation
             </h2>
-            <p className="text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
               Choose the service area you'd like to discuss and schedule a personalized consultation.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ export function ServicesContact() {
                   transition={{ delay: index * 0.2 }}
                   className="flex items-start justify-between mb-4"
                 >
-                  <h3 className="text-xl font-montserrat text-silver-100">
+                  <h3 className="text-lg md:text-xl font-montserrat text-silver-100">
                     {service.title}
                   </h3>
                   <span className="text-sm text-silver-400 font-inter">

@@ -13,6 +13,7 @@ import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
 import { useRef } from 'react'
 import { FloatingIcons } from './FloatingIcons'
+import { scrollToSection } from '@/lib/utils'
 
 export function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -48,13 +49,18 @@ export function AboutHero() {
       <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" aria-hidden="true" />
       <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" aria-hidden="true" />
 
-      {/* Floating Icons Layer - explicit pointer-events-auto */}
-      <div className="absolute inset-0 z-30 pointer-events-auto" aria-hidden="true">
+      {/* Floating Icons Layer */}
+      <div 
+        className="absolute inset-0 z-40 pointer-events-none" 
+        aria-hidden="true"
+      >
         <FloatingIcons />
       </div>
 
-      {/* Main Content - pointer-events-auto but lower z-index for text */}
-      <Container className="relative z-20 pointer-events-auto">
+      {/* Main Content */}
+      <Container 
+        className="relative z-30"
+      >
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +80,7 @@ export function AboutHero() {
                 Your Strategic PR & Digital Consulting Partner
               </motion.div>
               <h1 id="about-hero-heading" className="font-montserrat tracking-tight text-silver-100">
-                <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] block">
+                <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">
                   Michael
                 </span>
               </h1>
@@ -102,7 +108,15 @@ export function AboutHero() {
               aria-label="About page navigation"
             >
               <Button 
-                href="#story"
+                onClick={() => {
+                  const storySection = document.getElementById('story')
+                  const offset = storySection?.offsetTop || 0
+                  const headerOffset = 80
+                  window.scrollTo({
+                    top: offset - headerOffset,
+                    behavior: 'smooth'
+                  })
+                }}
                 className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                   hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
                 aria-label="Read my professional story"

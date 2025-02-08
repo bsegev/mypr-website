@@ -1,4 +1,4 @@
-<h1 className="text-5xl md:text-6xl lg:text-7xl font-montserrat font-light tracking-tight text-white uppercase">
+<h1 className="text-display-sm md:text-display-md lg:text-display-lg font-montserrat font-light tracking-tight text-white uppercase">
   Strategic PR 
   <span className="block mt-2 font-semibold">& Digital</span>
   <span className="font-light">Consulting</span>

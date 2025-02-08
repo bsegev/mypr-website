@@ -178,7 +178,7 @@ export function ServicesList() {
     <section 
       ref={sectionRef}
       id="services"
-      className="relative py-32 bg-black-950"
+      className="relative py-32 overflow-hidden bg-black-950"
       aria-labelledby="services-list-heading"
     >
       {/* Background with fade in */}
@@ -208,7 +208,7 @@ export function ServicesList() {
             <h2 id="services-list-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
               Our Services
             </h2>
-            <p className="text-silver-400 max-w-2xl mx-auto font-inter">
+            <p className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter">
               Comprehensive solutions to elevate your communications strategy
             </p>
           </motion.div>
@@ -271,7 +271,7 @@ export function ServicesList() {
                   <h3 id={`${service.id}-heading`} className="text-2xl md:text-3xl font-montserrat font-light tracking-wide text-silver-100 mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-lg text-silver-400 font-inter font-light">
+                  <p className="text-body md:text-body-lg text-silver-400 font-inter font-light">
                     {service.description}
                   </p>
                 </motion.div>

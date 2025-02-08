@@ -97,7 +97,7 @@ export function AboutValues() {
             <h2 id="values-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
               Our Values
             </h2>
-            <p className="text-lg font-inter font-light text-black-900/60 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl font-inter font-light text-black-900/60 max-w-2xl mx-auto">
               Core principles that guide our approach to delivering exceptional results
             </p>
             <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" aria-hidden="true" />
@@ -125,10 +125,10 @@ export function AboutValues() {
                 <div className="mb-6 text-black-900/40 group-hover:text-black-900/60 transition-colors" aria-hidden="true">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-montserrat font-medium text-black-900 mb-3">
+                <h3 className="text-lg md:text-xl font-montserrat font-medium text-black-900 mb-3">
                   {value.title}
                 </h3>
-                <p className="text-base text-black-900/60 font-inter font-light leading-relaxed">
+                <p className="text-body md:text-body-lg text-black-900/60 font-inter font-light leading-relaxed">
                   {value.description}
                 </p>
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />

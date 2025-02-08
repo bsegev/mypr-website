@@ -5,9 +5,11 @@ interface ButtonProps {
   href?: string;
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  onClick?: () => void;
+  type?: 'button' | 'submit' | 'reset';
 }
 
-export function Button({ children, href, size = 'md', className = '' }: ButtonProps) {
+export function Button({ children, href, size = 'md', className = '', onClick, type = 'button' }: ButtonProps) {
   const baseStyles = 'inline-flex items-center justify-center rounded-md font-semibold transition-colors';
   const sizeStyles = {
     sm: 'px-4 py-2 text-sm',
@@ -26,7 +28,11 @@ export function Button({ children, href, size = 'md', className = '' }: ButtonPr
   }
 
   return (
-    <button className={styles}>
+    <button 
+      type={type}
+      onClick={onClick}
+      className={styles}
+    >
       {children}
     </button>
   );

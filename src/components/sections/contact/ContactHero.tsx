@@ -46,7 +46,7 @@ export function ContactHero() {
         aria-hidden="true"
       >
         <motion.div style={{ y }} className="absolute inset-0">
-          <div className="absolute inset-0 bg-black-950/90 backdrop-blur-sm mix-blend-overlay" aria-hidden="true" />
+          <div className="absolute inset-0 bg-black-950/80 backdrop-blur-sm mix-blend-overlay" aria-hidden="true" />
           {/* Bespoke pattern overlay */}
           <div className="absolute inset-0 opacity-5" aria-hidden="true">
             <div className="w-full h-full bg-diagonal-texture bg-[length:30px_30px]" />
@@ -85,11 +85,14 @@ export function ContactHero() {
         >
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
+            <span className="text-overline font-montserrat tracking-widest uppercase block mb-8 text-silver-400">
+              Get in Touch
+            </span>
             <h1 id="contact-hero-heading" className="font-montserrat tracking-tight text-silver-100">
-              <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] block">
+              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">
                 Let's Connect
               </span>
-              <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] font-light block">
+              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] font-light block">
                 And Make It <span className="font-semibold">Happen</span>
               </span>
             </h1>

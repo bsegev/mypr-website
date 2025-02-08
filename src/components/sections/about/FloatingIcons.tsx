@@ -207,7 +207,7 @@ function FloatingIcon({
 
   return (
     <motion.div
-      className="absolute z-50"
+      className="absolute pointer-events-auto"
       animate={controls}
       style={{ x: position.x, y: position.y }}
       onMouseEnter={() => setIsHovered(true)}

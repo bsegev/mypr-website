@@ -8,6 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        // Display & Hero text
+        'display-lg': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 72px
+        'display-md': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 60px
+        'display-sm': ['3rem', { lineHeight: '1.1', letterSpacing: '-0.02em' }], // 48px
+        
+        // Headings
+        'h1': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 40px
+        'h2': ['2rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 32px
+        'h3': ['1.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 24px
+        'h4': ['1.25rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 20px
+        
+        // Body text
+        'body-lg': ['1.125rem', { lineHeight: '1.5' }], // 18px
+        'body': ['1rem', { lineHeight: '1.5' }], // 16px
+        'body-sm': ['0.875rem', { lineHeight: '1.5' }], // 14px
+        
+        // Special cases
+        'caption': ['0.75rem', { lineHeight: '1.5' }], // 12px
+        'overline': ['0.875rem', { lineHeight: '1.5', letterSpacing: '0.1em' }], // 14px
+      },
       colors: {
         'black': {
           800: '#1A1A1A',
@@ -41,7 +62,15 @@ const config: Config = {
           rgba(10, 10, 10, 0.01) 1px,
           rgba(10, 10, 10, 0.01) 2px
         )`,
-      }
+      },
+      screens: {
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
     },
   },
   plugins: [],

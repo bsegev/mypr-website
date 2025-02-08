@@ -49,6 +49,7 @@ const storyPoints = [
 export function AboutStory() {
   return (
     <section 
+      id="story"
       className="relative py-16 md:py-32 bg-silver-100 overflow-hidden"
       aria-labelledby="about-story-heading"
     >
@@ -63,7 +64,7 @@ export function AboutStory() {
           <h2 id="about-story-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
             Our Story
           </h2>
-          <p className="text-lg font-inter font-light text-black-900/60 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl font-inter font-light text-black-900/60 max-w-2xl mx-auto">
             MYPR – Your Strategic PR & Digital Consulting Partner
           </p>
           <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" aria-hidden="true" />
@@ -92,10 +93,10 @@ export function AboutStory() {
                   {point.icon}
                 </div>
                 <div className="space-y-3">
-                  <h3 className="text-xl font-montserrat font-medium text-black-900">
+                  <h3 className="text-lg md:text-xl font-montserrat font-medium text-black-900">
                     {point.title}
                   </h3>
-                  <p className="text-base text-black-900/70 font-inter font-light leading-relaxed">
+                  <p className="text-body md:text-body-lg text-black-900/70 font-inter font-light leading-relaxed">
                     {point.description}
                   </p>
                 </div>

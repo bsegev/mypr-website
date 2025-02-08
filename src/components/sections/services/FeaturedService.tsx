@@ -49,10 +49,10 @@ export function FeaturedService() {
               className="space-y-8"
             >
               <div>
-                <h2 id="featured-service-heading" className="font-montserrat text-4xl lg:text-5xl text-black-950 mb-4">
+                <h2 id="featured-service-heading" className="font-montserrat text-3xl md:text-4xl text-black-950 mb-4">
                   Israel Representation
                 </h2>
-                <p className="text-xl text-black-900/80 font-light max-w-xl">
+                <p className="text-lg md:text-xl text-black-900/80 font-light max-w-xl">
                   Your trusted partner for establishing and growing your organization's presence in Israel.
                 </p>
               </div>

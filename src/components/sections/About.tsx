@@ -113,22 +113,35 @@ export default function About() {
 
             <motion.div 
               variants={fadeInUp}
-              className="pt-6 flex flex-col sm:flex-row items-start gap-6"
+              className="pt-6 space-y-8"
             >
-              <Button 
-                href="/contact"
-                className="bg-black-900 hover:bg-black-800 text-silver-100 font-montserrat tracking-wide uppercase text-sm transition-all duration-300
-                  hover:shadow-lg hover:shadow-black-900/10 hover:-translate-y-0.5"
-                aria-label="Contact Michael Yemini"
-              >
-                Get in Touch
-                <span className="ml-2" aria-hidden="true">→</span>
-              </Button>
-              <address className="space-y-2 not-italic">
-                <p className="text-black-900/60 font-inter text-sm">Based in</p>
-                <p className="font-montserrat text-black-900">Tel Aviv, Israel</p>
-                <p className="text-black-900/60 font-inter text-sm">(Operating Internationally)</p>
-              </address>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Button 
+                  href="/about"
+                  className="group bg-transparent border border-black-900 text-black-900 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+                    hover:bg-black-900 hover:text-silver-100"
+                  aria-label="Learn more about Michael Yemini"
+                >
+                  Learn More
+                  <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                </Button>
+                <Button 
+                  href="/contact"
+                  className="bg-black-900 hover:bg-black-800 text-silver-100 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+                    hover:shadow-lg hover:shadow-black-900/10 hover:-translate-y-0.5"
+                  aria-label="Contact Michael Yemini"
+                >
+                  Get in Touch
+                  <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                </Button>
+              </div>
+              <div className="text-center">
+                <address className="space-y-2 not-italic">
+                  <p className="text-black-900/60 font-inter text-sm">Based in</p>
+                  <p className="font-montserrat text-black-900">Tel Aviv, Israel</p>
+                  <p className="text-black-900/60 font-inter text-sm">(Operating Internationally)</p>
+                </address>
+              </div>
             </motion.div>
           </div>
         </motion.div>

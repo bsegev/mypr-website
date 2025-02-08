@@ -105,7 +105,7 @@ export default function Hero() {
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
             <h1 className="font-montserrat tracking-tight text-silver-100">
-              <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] space-y-0">
+              <div className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] space-y-0">
                 <div className="leading-[1.1]">Strategic PR</div>
                 <div className="font-light leading-[1.1]">
                   <span className="font-semibold">&amp; Digital</span> Consulting

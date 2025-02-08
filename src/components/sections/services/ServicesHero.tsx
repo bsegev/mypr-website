@@ -42,7 +42,7 @@ export function ServicesHero() {
   return (
     <section 
       ref={sectionRef}
-      className="relative min-h-[90vh] flex items-center overflow-hidden bg-black-950"
+      className="relative min-h-[90vh] flex items-center overflow-hidden bg-black-950 pt-20"
       aria-labelledby="services-hero-heading"
     >
       {/* Background with fade in */}
@@ -98,7 +98,7 @@ export function ServicesHero() {
           {/* Service Categories */}
           <motion.div 
             variants={fadeInUp}
-            className="flex flex-wrap justify-center gap-4 text-sm font-montserrat tracking-widest uppercase"
+            className="flex flex-wrap justify-center gap-4 text-overline font-montserrat tracking-widest uppercase"
             role="doc-subtitle"
           >
             <span className="text-silver-400">Public Relations & Communications</span>
@@ -107,17 +107,17 @@ export function ServicesHero() {
           </motion.div>
 
           {/* Main Headline */}
-          <motion.div variants={fadeInUp} className="mt-12">
+          <motion.div variants={fadeInUp} className="mt-8 md:mt-12">
             <h1 id="services-hero-heading" className="font-montserrat tracking-tight text-silver-100">
-              <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] block">
+              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">
                 Bespoke PR & Digital
               </span>
-              <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] font-light block">
+              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] font-light block mt-2 md:mt-4">
                 From <span className="font-semibold">Strategy</span> to Execution
               </span>
             </h1>
             <motion.div 
-              className="mt-8 h-px w-24 mx-auto bg-gradient-to-r from-transparent via-silver-400/30 to-transparent"
+              className="mt-6 md:mt-8 h-px w-24 mx-auto bg-gradient-to-r from-transparent via-silver-400/30 to-transparent"
               whileHover={{ width: '8rem', opacity: 0.8 }}
               transition={{ duration: 0.3 }}
               aria-hidden="true"
@@ -127,7 +127,7 @@ export function ServicesHero() {
           {/* Subheading */}
           <motion.p 
             variants={fadeInUp}
-            className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-8"
+            className="text-body md:text-body-lg text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-6 md:mt-8 px-4 md:px-0"
           >
             A full-spectrum approach to define, shape, and elevate your image through targeted communications and strategic digital presence.
           </motion.p>
@@ -135,13 +135,18 @@ export function ServicesHero() {
           {/* CTAs */}
           <motion.div 
             variants={fadeInUp}
-            className="flex flex-col sm:flex-row items-center justify-center gap-8 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 pt-8 md:pt-12 px-4 sm:px-0"
             role="navigation"
             aria-label="Service navigation"
           >
             <Button 
-              href="#services"
-              className="min-w-[240px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+              onClick={() => {
+                window.scrollTo({
+                  top: document.getElementById('featured-service')?.offsetTop || 0,
+                  behavior: 'smooth'
+                })
+              }}
+              className="w-full sm:w-auto min-w-[240px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-body-sm transition-all duration-300
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
               aria-label="View our services"
             >
@@ -150,12 +155,12 @@ export function ServicesHero() {
             </Button>
             <Button 
               href="/contact"
-              className="group text-silver-400 hover:text-silver-200 transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center gap-2"
+              className="w-full sm:w-auto group text-silver-400 hover:text-silver-200 transition-colors duration-300 text-body-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
               aria-label="Schedule a consultation meeting"
             >
               Schedule a Consultation
               <motion.span 
-                className="text-xl"
+                className="text-lg"
                 animate={{ x: [0, 3, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 aria-hidden="true"

@@ -95,10 +95,10 @@ export function ContactMethods() {
                   <div className="w-12 h-12 rounded-full bg-black-900/5 flex items-center justify-center text-black-900" aria-hidden="true">
                     {method.icon}
                   </div>
-                  <h3 className="text-xl font-montserrat text-black-900">
+                  <h3 className="text-lg md:text-xl font-montserrat text-black-900">
                     {method.title}
                   </h3>
-                  <p className="text-black-900/60 font-inter font-light">
+                  <p className="text-body md:text-body-lg text-black-900/60 font-inter font-light">
                     {method.description}
                   </p>
                   <Button 

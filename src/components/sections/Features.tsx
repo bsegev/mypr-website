@@ -5,6 +5,7 @@ import { Container } from '@/components/ui/Container'
 import Link from 'next/link'
 import { useRef } from 'react'
 import { scrollToSection } from '@/lib/utils'
+import { Button } from '@/components/ui/Button'
 
 const features = [
   {
@@ -131,8 +132,8 @@ export default function Features() {
             <h2 id="expertise-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
               Expertise
             </h2>
-            <p className="text-silver-400 max-w-2xl mx-auto font-inter">
-              End-to-end solutions to elevate your communications strategy
+            <p className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter">
+              End-to-end solutions to elevate your communications strategy. Click to learn more.
             </p>
           </motion.div>
 
@@ -180,6 +181,21 @@ export default function Features() {
               </Link>
             ))}
           </nav>
+
+          {/* CTA Section */}
+          <motion.div
+            variants={fadeInUp}
+            className="text-center mt-16"
+          >
+            <Button
+              href="/services"
+              className="group bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+                hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
+            >
+              Explore All Services
+              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+            </Button>
+          </motion.div>
         </motion.div>
       </Container>
     </section>

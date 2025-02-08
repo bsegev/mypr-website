@@ -62,7 +62,7 @@ export default function Contact() {
             variants={fadeInUp}
             className="space-y-4 mb-12"
           >
-            <h2 id="contact-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100">
+            <h2 id="contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
               Let&apos;s Connect
             </h2>
             <p className="text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
