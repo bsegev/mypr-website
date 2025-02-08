@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: '/images/og_services.png',
+        url: 'https://mypr-website.vercel.app/images/og_services.png',
         width: 1200,
         height: 1200,
         alt: 'PR & Communications Services by Michael Yemini'
