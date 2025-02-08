@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     images: ['https://mypr-website.vercel.app/images/og_services.png'],
   },
   alternates: {
-    canonical: 'https://mypr.co.il/services'
+    canonical: 'https://mypr-website.vercel.app/services'
   },
   keywords: [
     'PR Services',

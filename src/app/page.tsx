@@ -20,15 +20,23 @@ export const metadata: Metadata = {
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: 'https://mypr-website.vercel.app/images/og_home.png',
+        secureUrl: 'https://mypr-website.vercel.app/images/og_home.png',
         width: 1200,
-        height: 630,
-        alt: 'Michael Yemini PR & Digital Strategy'
+        height: 1200,
+        alt: 'Michael Yemini PR & Digital Strategy',
+        type: 'image/png'
       }
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Michael Yemini | Strategic PR & Digital Consulting',
+    description: 'Transform your communications strategy with expert PR consulting and digital solutions.',
+    images: ['https://mypr-website.vercel.app/images/og_home.png'],
+  },
   alternates: {
-    canonical: 'https://mypr.co.il'
+    canonical: 'https://mypr-website.vercel.app'
   },
   keywords: [
     'PR Consulting',

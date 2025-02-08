@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: 'https://mypr.co.il/about'
+    canonical: 'https://mypr-website.vercel.app/about'
   },
   keywords: [
     'Michael Yemini',
