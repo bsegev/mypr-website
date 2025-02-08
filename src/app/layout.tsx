@@ -18,14 +18,19 @@ export const metadata: Metadata = {
   creator: 'Michael Yemini',
   openGraph: {
     type: 'website',
+    url: 'https://mypr-website.vercel.app',
     locale: 'en_US',
     siteName: 'Michael Yemini PR',
+    title: 'Michael Yemini | Strategic PR & Digital Consulting',
+    description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions. Based in Tel Aviv, serving clients worldwide.',
     images: [
       {
         url: 'https://mypr-website.vercel.app/images/og_home.png',
+        secureUrl: 'https://mypr-website.vercel.app/images/og_home.png',
         width: 1200,
         height: 1200,
-        alt: 'Michael Yemini PR & Digital Strategy'
+        alt: 'Michael Yemini PR & Digital Strategy',
+        type: 'image/png'
       }
     ]
   },

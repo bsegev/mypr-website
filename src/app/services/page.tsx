@@ -12,14 +12,17 @@ export const metadata: Metadata = {
     title: 'PR & Communications Services | Michael Yemini',
     description: 'Strategic PR services, crisis management, and digital communications solutions. Expert consulting for businesses and organizations in Israel and worldwide.',
     type: 'website',
+    url: 'https://mypr-website.vercel.app/services',
     locale: 'en_US',
     siteName: 'Michael Yemini PR',
     images: [
       {
         url: 'https://mypr-website.vercel.app/images/og_services.png',
+        secureUrl: 'https://mypr-website.vercel.app/images/og_services.png',
         width: 1200,
         height: 1200,
-        alt: 'PR & Communications Services by Michael Yemini'
+        alt: 'PR & Communications Services by Michael Yemini',
+        type: 'image/png'
       }
     ]
   },
