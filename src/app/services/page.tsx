@@ -47,29 +47,14 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <>
-      <head>
-        <meta property="og:title" content="PR & Communications Services | Michael Yemini" />
-        <meta property="og:description" content="Strategic PR services, crisis management, and digital communications solutions. Expert consulting for businesses and organizations in Israel and worldwide." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://mypr-website.vercel.app/services" />
-        <meta property="og:image" content="https://mypr-website.vercel.app/images/og_services.png" />
-        <meta property="og:image:secure_url" content="https://mypr-website.vercel.app/images/og_services.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:type" content="image/png" />
-        <meta property="og:site_name" content="Michael Yemini PR" />
-        <meta property="og:locale" content="en_US" />
-      </head>
-      <main>
-        <article>
-          <ServicesHero />
-          <FeaturedService />
-          <ServicesList />
-          <ProcessSection />
-          <ServicesContact />
-        </article>
-      </main>
-    </>
+    <main>
+      <article>
+        <ServicesHero />
+        <FeaturedService />
+        <ServicesList />
+        <ProcessSection />
+        <ServicesContact />
+      </article>
+    </main>
   )
 } 
