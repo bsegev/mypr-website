@@ -31,6 +31,17 @@ export function AboutHero() {
 
   const y = useTransform(smoothProgress, [0, 1], [0, 150])
 
+  const scrollToStory = () => {
+    if (typeof window === 'undefined') return;
+    const storySection = document.getElementById('story')
+    const offset = storySection?.offsetTop || 0
+    const headerOffset = 80
+    window.scrollTo({
+      top: offset - headerOffset,
+      behavior: 'smooth'
+    })
+  }
+
   return (
     <section 
       ref={sectionRef}
@@ -108,15 +119,7 @@ export function AboutHero() {
               aria-label="About page navigation"
             >
               <Button 
-                onClick={() => {
-                  const storySection = document.getElementById('story')
-                  const offset = storySection?.offsetTop || 0
-                  const headerOffset = 80
-                  window.scrollTo({
-                    top: offset - headerOffset,
-                    behavior: 'smooth'
-                  })
-                }}
+                onClick={scrollToStory}
                 className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                   hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
                 aria-label="Read my professional story"

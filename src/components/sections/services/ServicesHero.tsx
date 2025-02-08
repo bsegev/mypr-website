@@ -39,6 +39,17 @@ export function ServicesHero() {
   const y = useTransform(smoothProgress, [0, 1], [0, 150])
   const videoOpacity = useTransform(smoothProgress, [0, 1], [0.3, 0])
 
+  const scrollToFeaturedService = () => {
+    if (typeof window === 'undefined') return;
+    const element = document.getElementById('featured-service');
+    if (element) {
+      window.scrollTo({
+        top: element.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section 
       ref={sectionRef}
@@ -140,12 +151,7 @@ export function ServicesHero() {
             aria-label="Service navigation"
           >
             <Button 
-              onClick={() => {
-                window.scrollTo({
-                  top: document.getElementById('featured-service')?.offsetTop || 0,
-                  behavior: 'smooth'
-                })
-              }}
+              onClick={scrollToFeaturedService}
               className="w-full sm:w-auto min-w-[240px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-body-sm transition-all duration-300
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
               aria-label="View our services"

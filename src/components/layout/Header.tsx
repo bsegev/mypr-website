@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
-import Lottie from 'lottie-react'
-import menuButtonAnimation from '@/../../public/lotties/menu-button.json'
+import { LottieMenuButton } from './LottieMenuButton'
 
 const navItems = [
   { name: 'Home', path: '/' },
@@ -82,6 +81,8 @@ export function Header() {
   }, [pathname])
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden'
       lottieRef.current?.playSegments([0, 54], true)
@@ -90,7 +91,9 @@ export function Header() {
       lottieRef.current?.playSegments([54, 0], true)
     }
     return () => {
-      document.body.style.overflow = 'unset'
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = 'unset'
+      }
     }
   }, [isMobileMenuOpen])
 
@@ -149,15 +152,7 @@ export function Header() {
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle menu"
             >
-              <div className="w-6 h-6">
-                <Lottie
-                  lottieRef={lottieRef}
-                  animationData={menuButtonAnimation}
-                  loop={false}
-                  autoplay={false}
-                  className="w-full h-full [&_path]:!stroke-current"
-                />
-              </div>
+              <LottieMenuButton isOpen={isMobileMenuOpen} />
             </button>
           </nav>
         </Container>
