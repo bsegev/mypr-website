@@ -57,6 +57,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+      <head>
+        <meta property="og:title" content="Michael Yemini | Strategic PR & Digital Consulting" />
+        <meta property="og:description" content="Transform your communications strategy with expert PR consulting, crisis management, and digital solutions. Based in Tel Aviv, serving clients worldwide." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mypr-website.vercel.app" />
+        <meta property="og:image" content="https://mypr-website.vercel.app/images/og_home.png" />
+        <meta property="og:image:secure_url" content="https://mypr-website.vercel.app/images/og_home.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:site_name" content="Michael Yemini PR" />
+        <meta property="og:locale" content="en_US" />
+      </head>
       <body>
         <Header />
         {children}

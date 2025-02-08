@@ -42,11 +42,26 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
-      <article>
-        <ContactHero />
-        <ContactMethods />
-      </article>
-    </main>
+    <>
+      <head>
+        <meta property="og:title" content="Contact Michael Yemini | PR & Digital Strategy" />
+        <meta property="og:description" content="Connect with Michael Yemini for strategic PR consulting, crisis management, and digital communications. Schedule a consultation to transform your communications strategy." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mypr-website.vercel.app/contact" />
+        <meta property="og:image" content="https://mypr-website.vercel.app/images/og_contact.png" />
+        <meta property="og:image:secure_url" content="https://mypr-website.vercel.app/images/og_contact.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:site_name" content="Michael Yemini PR" />
+        <meta property="og:locale" content="en_US" />
+      </head>
+      <main>
+        <article>
+          <ContactHero />
+          <ContactMethods />
+        </article>
+      </main>
+    </>
   );
 } 

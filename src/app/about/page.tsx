@@ -47,14 +47,29 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      <article>
-        <AboutHero />
-        <AboutStory />
-        <AboutValues />
-        <AboutExperience />
-        <AboutContact />
-      </article>
-    </main>
+    <>
+      <head>
+        <meta property="og:title" content="About Michael Yemini | PR & Communications Expert" />
+        <meta property="og:description" content="Learn about Michael Yemini's proven approach to strategic PR, crisis management, and digital communications. Expertise in Israeli and international markets." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mypr-website.vercel.app/about" />
+        <meta property="og:image" content="https://mypr-website.vercel.app/images/og_about.png" />
+        <meta property="og:image:secure_url" content="https://mypr-website.vercel.app/images/og_about.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:site_name" content="Michael Yemini PR" />
+        <meta property="og:locale" content="en_US" />
+      </head>
+      <main>
+        <article>
+          <AboutHero />
+          <AboutStory />
+          <AboutValues />
+          <AboutExperience />
+          <AboutContact />
+        </article>
+      </main>
+    </>
   )
 } 
