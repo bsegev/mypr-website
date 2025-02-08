@@ -91,9 +91,9 @@ export default function Contact() {
             <motion.div
               whileHover={{ y: -2, transition: { duration: 0.2 } }}
             >
-              <Button 
-                href="https://linkedin.com/in/your-profile"
-                className="group bg-transparent border border-silver-400/20 hover:border-silver-400/40 text-silver-100 px-8 py-4 font-montserrat tracking-wide uppercase text-sm transition-all duration-300"
+              <Button
+                href="https://www.linkedin.com/in/michaelyemini/"
+                className="group inline-flex items-center gap-2 bg-transparent text-silver-400 hover:text-silver-200 font-montserrat tracking-wide text-sm transition-colors duration-300"
               >
                 Connect on LinkedIn
                 <span className="ml-2">→</span>

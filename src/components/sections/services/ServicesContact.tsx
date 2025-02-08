@@ -162,9 +162,10 @@ export function ServicesContact() {
               whileHover={{ y: -2 }}
               transition={{ duration: 0.2 }}
             >
-              <Button 
-                href="https://linkedin.com/in/your-profile"
-                className="group inline-flex items-center gap-2 bg-transparent text-silver-400 hover:text-silver-200 font-montserrat tracking-wide text-sm transition-colors duration-300"
+              <Button
+                href="https://www.linkedin.com/in/michaelyemini/"
+                className="w-full bg-transparent border border-silver-400/20 text-silver-100 py-3 font-montserrat tracking-wide text-sm transition-all duration-300
+                  hover:bg-silver-400/10"
               >
                 Let&apos;s connect on LinkedIn
                 <svg className="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">

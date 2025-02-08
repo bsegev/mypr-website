@@ -86,8 +86,8 @@ export function AboutContact() {
                 <p className="text-black-900/60 font-inter font-light">
                   Connect with me on LinkedIn to stay updated on PR insights and opportunities.
                 </p>
-                <Button 
-                  href="https://linkedin.com/in/your-profile"
+                <Button
+                  href="https://www.linkedin.com/in/michaelyemini/"
                   className="w-full bg-transparent border border-black-900 text-black-900 py-3 font-montserrat tracking-wide text-sm transition-all duration-300
                     hover:bg-black-900 hover:text-silver-100"
                 >
