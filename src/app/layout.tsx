@@ -7,7 +7,11 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mypr.co.il'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || // Custom domain
+    process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : // Vercel preview URL
+    'https://mypr-website.vercel.app' // Fallback URL
+  ),
   title: {
     default: 'Michael Yemini | Strategic PR & Digital Consulting',
     template: '%s | Michael Yemini PR'
