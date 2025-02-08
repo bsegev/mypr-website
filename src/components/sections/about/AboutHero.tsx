@@ -72,8 +72,8 @@ export function AboutHero() {
                 Your Strategic PR & Digital Consulting Partner
               </motion.div>
               <h1 className="font-montserrat tracking-tight text-silver-100">
-                <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-tight">
-                  Michael
+                <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] space-y-0">
+                  <div className="leading-[1.1]">Michael</div>
                 </div>
               </h1>
             </div>

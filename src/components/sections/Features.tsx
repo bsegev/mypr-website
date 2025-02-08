@@ -2,12 +2,14 @@
 
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
+import Link from 'next/link'
 import { useRef } from 'react'
+import { scrollToSection } from '@/lib/utils'
 
 const features = [
   {
-    title: "Public Relations & Communications",
-    description: "Crafting compelling narratives and managing your public image through targeted media channels.",
+    title: "Public Relations & Strategic Communications",
+    href: "/services#pr-communications",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -15,8 +17,8 @@ const features = [
     ),
   },
   {
-    title: "Digital & Social Strategy",
-    description: "Managing your online presence through content creation, social media, and influencer collaborations.",
+    title: "Social Media Management & Digital Marketing",
+    href: "/services#digital-marketing",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -24,11 +26,39 @@ const features = [
     ),
   },
   {
-    title: "Crisis Management",
-    description: "Transforming challenges into opportunities by protecting and enhancing your reputation.",
+    title: "Reputation Building & Crisis Management",
+    href: "/services#crisis-management",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Media Outreach & Press Coverage",
+    href: "/services#media-outreach",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Content Creation & Brand Storytelling",
+    href: "/services#content-creation",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>
+    ),
+  },
+  {
+    title: "Israel Representation",
+    href: "/services#featured-service",
+    featured: true,
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
   }
@@ -70,6 +100,7 @@ export default function Features() {
     <section 
       ref={sectionRef} 
       className="relative py-32 overflow-hidden bg-black-950 will-change-transform"
+      id="expertise"
     >
       {/* Background fades in */}
       <motion.div
@@ -78,7 +109,7 @@ export default function Features() {
         transition={{ duration: 1 }}
         className="absolute inset-0"
       >
-        <div className="absolute inset-0 bg-gradient-radial from-black-900/50 to-transparent opacity-50" />
+        <div className="absolute inset-0 bg-gradient-radial from-black-900/50 via-black-950/30 to-transparent opacity-50" />
         <div className="absolute inset-0 bg-diagonal-texture bg-[length:30px_30px] opacity-5" />
       </motion.div>
 
@@ -104,31 +135,45 @@ export default function Features() {
           </motion.div>
 
           {/* Features Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature) => (
+              <Link 
                 key={feature.title}
-                variants={featureVariants}
+                href={feature.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const id = feature.href.split('#')[1];
+                  window.location.href = feature.href;
+                  setTimeout(() => scrollToSection(id), 100);
+                }}
                 className="relative group"
-                custom={index}
               >
-                <div className="relative p-8 rounded-lg border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className={`p-8 rounded-lg transition-all duration-300 ${
+                    feature.featured 
+                      ? 'bg-silver-100 hover:bg-silver-200/90' 
+                      : 'border border-silver-400/10 hover:border-silver-400/20'
+                  }`}
+                >
                   <motion.div 
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ delay: index * 0.1 + 0.3 }}
-                    className="w-12 h-12 mb-6 rounded-full bg-gradient-to-br from-silver-400/20 to-transparent flex items-center justify-center text-silver-300"
+                    className={`w-12 h-12 mb-6 rounded-full flex items-center justify-center ${
+                      feature.featured
+                        ? 'bg-black-950 text-silver-100'
+                        : 'bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300'
+                    }`}
                   >
                     {feature.icon}
                   </motion.div>
-                  <h3 className="text-xl font-montserrat font-medium text-silver-100 mb-3">
+                  <h3 className={`text-xl font-montserrat font-medium ${
+                    feature.featured ? 'text-black-950' : 'text-silver-100'
+                  }`}>
                     {feature.title}
                   </h3>
-                  <p className="text-silver-400 font-inter font-light leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </motion.div>

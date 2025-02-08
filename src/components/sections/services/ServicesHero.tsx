@@ -96,9 +96,7 @@ export function ServicesHero() {
             variants={fadeInUp}
             className="flex flex-wrap justify-center gap-4 text-sm font-montserrat tracking-widest uppercase"
           >
-            <span className="text-silver-400">Public Relations</span>
-            <span className="text-silver-400/30">•</span>
-            <span className="text-silver-400">Communications Consulting</span>
+            <span className="text-silver-400">Public Relations & Communications</span>
             <span className="text-silver-400/30">•</span>
             <span className="text-silver-400">Digital Strategy</span>
           </motion.div>
@@ -106,13 +104,11 @@ export function ServicesHero() {
           {/* Main Headline */}
           <motion.div variants={fadeInUp} className="mt-12">
             <h1 className="font-montserrat tracking-tight text-silver-100">
-              <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-tight">
-                <motion.div className="mb-4">
-                  Full-Service
-                </motion.div>
-                <motion.div className="font-light">
-                  <span className="font-semibold">Strategic</span> Solutions
-                </motion.div>
+              <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] space-y-0">
+                <div className="leading-[1.1]">Bespoke PR & Digital</div>
+                <div className="font-light leading-[1.1]">
+                  From <span className="font-semibold">Strategy</span> to Execution
+                </div>
               </div>
             </h1>
             <motion.div 
@@ -127,8 +123,7 @@ export function ServicesHero() {
             variants={fadeInUp}
             className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-8"
           >
-            Crafting a strong public image and delivering your message through targeted media channels, 
-            while managing your digital presence and protecting your reputation.
+            A full-spectrum approach to define, shape, and elevate your image through targeted communications and strategic digital presence.
           </motion.p>
 
           {/* CTAs */}

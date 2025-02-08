@@ -98,7 +98,7 @@ export default function About() {
               className="space-y-6 text-lg text-black-900/80 font-inter font-light"
             >
               <p>
-                I&apos;m Michael—a communications consultant with expertise in public relations, 
+                I&apos;m Michael – a communications consultant with expertise in public relations, 
                 crisis management, and digital strategy. Through intensive, hands-on experience 
                 working with senior figures in Israeli politics, leading brands, and large organizations.
               </p>

@@ -13,13 +13,6 @@ import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { useRef } from 'react'
 
-const stats = [
-  { value: "5+", label: "Years Experience" },
-  { value: "25+", label: "Crisis Cases" },
-  { value: "50+", label: "Media Campaigns" },
-  { value: "20+", label: "Industry Leaders" }
-]
-
 const achievements = [
   {
     title: "High-Profile Campaigns",
@@ -80,32 +73,6 @@ export function AboutExperience() {
               Proven experience delivering results for industry leaders
             </p>
             <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-silver-400/40 to-transparent" />
-          </motion.div>
-
-          {/* Stats Grid */}
-          <motion.div 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="text-3xl md:text-4xl font-montserrat font-light text-silver-100 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-base text-silver-400 font-inter font-light">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
 
           {/* Achievements Grid */}

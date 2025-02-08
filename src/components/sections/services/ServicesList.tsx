@@ -16,32 +16,34 @@ import Image from 'next/image'
 
 const services = [
   {
-    title: "PR Representative",
-    description: "Your dedicated point of contact for all communications, managing media relations and public presence.",
-    image: "/images/spokesperson_image.jpg",
+    id: "pr-communications",
+    title: "Public Relations & Strategic Communications",
+    description: "We craft compelling narratives and execute targeted communication strategies to enhance your brand's reputation. Our expertise ensures your message reaches the right audience, building credibility and trust.",
+    image: "/images/pr-strategy.png",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
       </svg>
     ),
     details: [
       {
-        title: "Media Relations",
-        description: "Your front-line spokesperson, handling press inquiries and proactively pitching stories to media."
+        title: "Narrative Development",
+        description: "Crafting compelling narratives that enhance your brand's reputation."
       },
       {
-        title: "Public Communications",
-        description: "Creating and delivering press releases, statements, and public-facing materials that elevate your brand."
+        title: "Targeted Communications",
+        description: "Executing strategic communications to reach the right audience."
       },
       {
-        title: "Industry Networking",
-        description: "Building and maintaining relationships with key media contacts and industry stakeholders."
+        title: "Trust Building",
+        description: "Building credibility and trust through effective messaging."
       }
     ]
   },
   {
-    title: "Digital & Social Strategy",
-    description: "Behind-the-scenes management of your digital presence to build and engage your audience.",
+    id: "digital-marketing",
+    title: "Social Media Management & Digital Marketing",
+    description: "We create and manage engaging social media campaigns, optimizing your digital presence to drive traffic, increase engagement, and convert followers into loyal customers.",
     image: "/images/social-media-image.jpg",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,23 +52,24 @@ const services = [
     ),
     details: [
       {
-        title: "Content Strategy",
-        description: "Crafting compelling content that builds authority and drives meaningful engagement."
+        title: "Campaign Management",
+        description: "Creating and managing engaging social media campaigns."
       },
       {
-        title: "Platform Management",
-        description: "Day-to-day management of social media presence, including community engagement and influencer partnerships."
+        title: "Digital Optimization",
+        description: "Optimizing digital presence to drive traffic and engagement."
       },
       {
-        title: "Digital Campaigns",
-        description: "Creating and executing targeted campaigns with measurable results and clear ROI."
+        title: "Audience Conversion",
+        description: "Converting followers into loyal customers through strategic engagement."
       }
     ]
   },
   {
-    title: "Crisis Management",
-    description: "Expert guidance and rapid response when challenges arise, protecting your reputation when it matters most.",
-    image: "/images/crisis-image.jpg",
+    id: "crisis-management",
+    title: "Reputation Building & Crisis Management",
+    description: "We proactively manage your brand's image and address crises effectively, ensuring that challenges are turned into opportunities and your reputation remains strong and resilient.",
+    image: "/images/crisis-response.png",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
@@ -74,16 +77,66 @@ const services = [
     ),
     details: [
       {
-        title: "Crisis Prevention",
-        description: "Identifying potential risks and developing proactive mitigation strategies."
+        title: "Proactive Management",
+        description: "Proactively managing your brand's image to prevent issues."
       },
       {
-        title: "Rapid Response",
-        description: "24/7 crisis support with immediate action plans and stakeholder communications."
+        title: "Crisis Response",
+        description: "Addressing crises effectively and turning challenges into opportunities."
       },
       {
-        title: "Reputation Recovery",
-        description: "Post-crisis reputation rebuilding and strategic communications planning."
+        title: "Reputation Resilience",
+        description: "Maintaining a strong and resilient reputation through challenges."
+      }
+    ]
+  },
+  {
+    id: "media-outreach",
+    title: "Media Outreach & Press Coverage",
+    description: "Our extensive media network allows us to secure press coverage and exposure in leading publications, ensuring your brand gains the recognition and visibility it deserves.",
+    image: "/images/media-coverage.png",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+      </svg>
+    ),
+    details: [
+      {
+        title: "Media Network",
+        description: "Leveraging our extensive media network for coverage."
+      },
+      {
+        title: "Press Coverage",
+        description: "Securing exposure in leading publications."
+      },
+      {
+        title: "Brand Recognition",
+        description: "Ensuring your brand gains deserved recognition and visibility."
+      }
+    ]
+  },
+  {
+    id: "content-creation",
+    title: "Content Creation & Brand Storytelling",
+    description: "We develop high-quality content, including articles, press releases, and multimedia assets, to convey your brand's story authentically and compellingly.",
+    image: "/images/marketing.jpg",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+      </svg>
+    ),
+    details: [
+      {
+        title: "Content Development",
+        description: "Developing high-quality articles and press releases."
+      },
+      {
+        title: "Multimedia Creation",
+        description: "Creating compelling multimedia assets for your brand."
+      },
+      {
+        title: "Authentic Storytelling",
+        description: "Conveying your brand's story authentically and compellingly."
       }
     ]
   }
@@ -148,6 +201,7 @@ export function ServicesList() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
+              id={service.id}
               variants={serviceVariants}
               className={`flex flex-col ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'

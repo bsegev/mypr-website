@@ -105,11 +105,10 @@ export default function Hero() {
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
             <h1 className="font-montserrat tracking-tight text-silver-100">
-              <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-tight">
-                <div className="mb-4">Strategic PR</div>
-                <div className="font-light">
+              <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] space-y-0">
+                <div className="leading-[1.1]">Strategic PR</div>
+                <div className="font-light leading-[1.1]">
                   <span className="font-semibold">&amp; Digital</span> Consulting
-                  <span className="text-silver-300 font-thin ml-1">.</span>
                 </div>
               </div>
             </h1>
@@ -120,7 +119,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-8"
           >
-            Full-service public relations, crisis management, and digital strategy for business owners, CEOs, and communications leaders.
+            Full-spectrum public relations, crisis management, and digital strategy for business owners, CEOs, and communications leaders.
           </motion.p>
 
           {/* Buttons fade in last */}
