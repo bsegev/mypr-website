@@ -48,7 +48,10 @@ const storyPoints = [
 
 export function AboutStory() {
   return (
-    <section className="relative py-16 md:py-32 bg-silver-100 overflow-hidden">
+    <section 
+      className="relative py-16 md:py-32 bg-silver-100 overflow-hidden"
+      aria-labelledby="about-story-heading"
+    >
       <Container>
         {/* Section Header */}
         <motion.div 
@@ -57,17 +60,21 @@ export function AboutStory() {
           viewport={{ once: true }}
           className="text-center mb-16 md:mb-24 space-y-4"
         >
-          <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
+          <h2 id="about-story-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
             Our Story
           </h2>
           <p className="text-lg font-inter font-light text-black-900/60 max-w-2xl mx-auto">
             MYPR – Your Strategic PR & Digital Consulting Partner
           </p>
-          <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" />
+          <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" aria-hidden="true" />
         </motion.div>
 
         <TracingBeam className="px-4 md:px-8">
-          <div className="max-w-2xl mx-auto space-y-12 md:space-y-16">
+          <div 
+            className="max-w-2xl mx-auto space-y-12 md:space-y-16"
+            role="list"
+            aria-label="Professional journey milestones"
+          >
             {storyPoints.map((point, index) => (
               <motion.div
                 key={point.id}
@@ -76,8 +83,12 @@ export function AboutStory() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: index * 0.2 }}
                 className="relative pl-10 md:pl-16"
+                role="listitem"
               >
-                <div className="absolute left-0 top-1 flex items-center justify-center w-8 h-8 rounded-full bg-black-900 text-silver-100">
+                <div 
+                  className="absolute left-0 top-1 flex items-center justify-center w-8 h-8 rounded-full bg-black-900 text-silver-100"
+                  aria-hidden="true"
+                >
                   {point.icon}
                 </div>
                 <div className="space-y-3">
@@ -97,8 +108,13 @@ export function AboutStory() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="relative pl-10 md:pl-16 pt-8 border-t border-black-900/10"
+              role="contentinfo"
+              aria-label="Mission statement"
             >
-              <div className="absolute left-0 top-[calc(2rem+1px)] flex items-center justify-center w-8 h-8 rounded-full bg-black-900 text-silver-100">
+              <div 
+                className="absolute left-0 top-[calc(2rem+1px)] flex items-center justify-center w-8 h-8 rounded-full bg-black-900 text-silver-100"
+                aria-hidden="true"
+              >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>

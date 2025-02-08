@@ -56,7 +56,11 @@ export function AboutExperience() {
   const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section ref={sectionRef} className="relative py-32 bg-black-950">
+    <section 
+      ref={sectionRef} 
+      className="relative py-32 bg-black-950"
+      aria-labelledby="experience-heading"
+    >
       <Container>
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
@@ -66,13 +70,13 @@ export function AboutExperience() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100 mb-6">
+            <h2 id="experience-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100 mb-6">
               Track Record
             </h2>
             <p className="text-xl text-silver-400 font-inter font-light max-w-3xl mx-auto">
               Proven experience delivering results for industry leaders
             </p>
-            <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-silver-400/40 to-transparent" />
+            <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-silver-400/40 to-transparent" aria-hidden="true" />
           </motion.div>
 
           {/* Achievements Grid */}
@@ -81,6 +85,8 @@ export function AboutExperience() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="grid md:grid-cols-3 gap-8 mb-16"
+            role="list"
+            aria-label="Key achievements"
           >
             {achievements.map((item, index) => (
               <motion.div
@@ -90,8 +96,9 @@ export function AboutExperience() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="relative p-8 rounded-lg bg-black-900/50 border border-silver-400/10 hover:border-silver-400/20 transition-colors group"
+                role="listitem"
               >
-                <div className="mb-6 text-silver-400 group-hover:text-silver-300 transition-colors">
+                <div className="mb-6 text-silver-400 group-hover:text-silver-300 transition-colors" aria-hidden="true">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-montserrat font-medium text-silver-100 mb-3">
@@ -111,14 +118,19 @@ export function AboutExperience() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h3 className="text-xl font-montserrat font-medium text-silver-100 mb-6">
+            <h3 id="clients-heading" className="text-xl font-montserrat font-medium text-silver-100 mb-6">
               Who I Work With
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div 
+              className="flex flex-wrap justify-center gap-4"
+              role="list"
+              aria-labelledby="clients-heading"
+            >
               {clients.map((client) => (
                 <div 
                   key={client}
                   className="px-4 py-2 rounded-full bg-black-900/50 border border-silver-400/10 text-silver-400 font-inter text-sm font-light"
+                  role="listitem"
                 >
                   {client}
                 </div>
@@ -129,7 +141,7 @@ export function AboutExperience() {
       </Container>
 
       {/* Bottom Accent */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
         <div className="h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-silver-400/10 to-transparent" />
       </div>

@@ -34,9 +34,10 @@ export function AboutHero() {
     <section 
       ref={sectionRef}
       className="relative min-h-[90vh] flex items-center overflow-hidden bg-black-950"
+      aria-labelledby="about-hero-heading"
     >
       {/* Background Elements - pointer-events-none */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <motion.div style={{ y }} className="absolute inset-0">
           <div className="absolute inset-0 bg-black-950/95 backdrop-blur-sm" />
           <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
@@ -44,11 +45,11 @@ export function AboutHero() {
       </div>
 
       {/* Silver accent lines - pointer-events-none */}
-      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" />
+      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" aria-hidden="true" />
+      <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-silver-400/10 to-transparent pointer-events-none" aria-hidden="true" />
 
       {/* Floating Icons Layer - explicit pointer-events-auto */}
-      <div className="absolute inset-0 z-30 pointer-events-auto">
+      <div className="absolute inset-0 z-30 pointer-events-auto" aria-hidden="true">
         <FloatingIcons />
       </div>
 
@@ -68,13 +69,14 @@ export function AboutHero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
                 className="text-sm uppercase tracking-widest text-silver-400 font-montserrat"
+                role="doc-subtitle"
               >
                 Your Strategic PR & Digital Consulting Partner
               </motion.div>
-              <h1 className="font-montserrat tracking-tight text-silver-100">
-                <div className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] space-y-0">
-                  <div className="leading-[1.1]">Michael</div>
-                </div>
+              <h1 id="about-hero-heading" className="font-montserrat tracking-tight text-silver-100">
+                <span className="text-5xl md:text-6xl lg:text-7xl uppercase leading-[1.1] block">
+                  Michael
+                </span>
               </h1>
             </div>
 
@@ -96,21 +98,25 @@ export function AboutHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
+              role="navigation"
+              aria-label="About page navigation"
             >
               <Button 
                 href="#story"
                 className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                   hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
+                aria-label="Read my professional story"
               >
                 My Story
-                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform">↓</span>
+                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
               </Button>
               <Button 
                 href="/contact"
                 className="group min-w-[200px] border border-silver-400/20 hover:border-silver-400/40 text-silver-100 font-montserrat tracking-wide uppercase text-sm transition-all duration-300"
+                aria-label="Contact Michael Yemini"
               >
                 Get in Touch
-                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform">→</span>
+                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
               </Button>
             </motion.div>
           </motion.div>
@@ -118,7 +124,7 @@ export function AboutHero() {
       </Container>
 
       {/* Bottom Accent - pointer-events-none */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none">
+      <div className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none" aria-hidden="true">
         <div className="h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-silver-400/10 to-transparent" />
       </div>

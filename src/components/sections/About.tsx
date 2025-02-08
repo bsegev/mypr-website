@@ -39,6 +39,7 @@ export default function About() {
     <section 
       ref={sectionRef}
       className="relative py-32 overflow-hidden bg-silver-100"
+      aria-labelledby="about-heading"
     >
       {/* Background fades in */}
       <motion.div
@@ -46,6 +47,7 @@ export default function About() {
         animate={{ opacity: isInView ? 1 : 0 }}
         transition={{ duration: 1 }}
         className="absolute inset-0"
+        aria-hidden="true"
       >
         <div className="absolute inset-0 bg-shirt-texture opacity-5" />
         <div className="absolute top-0 w-full h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
@@ -74,7 +76,7 @@ export default function About() {
               >
                 <Image
                   src="/images/my_image.jpg"
-                  alt="Michael Yemini"
+                  alt="Michael Yemini - PR and Digital Strategy Consultant"
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -87,10 +89,10 @@ export default function About() {
           {/* Content fades in with stagger */}
           <div className="space-y-8">
             <motion.div variants={fadeInUp}>
-              <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
+              <h2 id="about-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
                 My Story
               </h2>
-              <div className="mt-2 h-px w-24 bg-gradient-to-r from-black-900/40 to-transparent" />
+              <div className="mt-2 h-px w-24 bg-gradient-to-r from-black-900/40 to-transparent" aria-hidden="true" />
             </motion.div>
 
             <motion.div 
@@ -117,15 +119,16 @@ export default function About() {
                 href="/contact"
                 className="bg-black-900 hover:bg-black-800 text-silver-100 font-montserrat tracking-wide uppercase text-sm transition-all duration-300
                   hover:shadow-lg hover:shadow-black-900/10 hover:-translate-y-0.5"
+                aria-label="Contact Michael Yemini"
               >
                 Get in Touch
-                <span className="ml-2">→</span>
+                <span className="ml-2" aria-hidden="true">→</span>
               </Button>
-              <div className="space-y-2">
+              <address className="space-y-2 not-italic">
                 <p className="text-black-900/60 font-inter text-sm">Based in</p>
                 <p className="font-montserrat text-black-900">Tel Aviv, Israel</p>
                 <p className="text-black-900/60 font-inter text-sm">(Operating Internationally)</p>
-              </div>
+              </address>
             </motion.div>
           </div>
         </motion.div>

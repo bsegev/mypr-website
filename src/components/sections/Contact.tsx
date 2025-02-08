@@ -33,6 +33,7 @@ export default function Contact() {
     <section 
       ref={sectionRef}
       className="relative py-32 overflow-hidden bg-black-950"
+      aria-labelledby="contact-heading"
     >
       {/* Background elements fade in */}
       <motion.div
@@ -40,6 +41,7 @@ export default function Contact() {
         animate={{ opacity: isInView ? 1 : 0 }}
         transition={{ duration: 1 }}
         className="absolute inset-0"
+        aria-hidden="true"
       >
         <div className="absolute inset-0 bg-pinstripe opacity-10" />
         <div className="absolute inset-0 bg-gradient-radial opacity-50" />
@@ -60,7 +62,7 @@ export default function Contact() {
             variants={fadeInUp}
             className="space-y-4 mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100">
+            <h2 id="contact-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100">
               Let&apos;s Connect
             </h2>
             <p className="text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
@@ -73,6 +75,8 @@ export default function Contact() {
           <motion.div 
             variants={fadeInUp}
             className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            role="navigation"
+            aria-label="Contact options"
           >
             {/* Meeting Button */}
             <motion.div
@@ -81,9 +85,10 @@ export default function Contact() {
               <Button 
                 href="https://calendly.com/your-link"
                 className="group relative overflow-hidden bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300"
+                aria-label="Schedule a consultation meeting"
               >
                 Schedule a Consultation
-                <span className="ml-2">→</span>
+                <span className="ml-2" aria-hidden="true">→</span>
               </Button>
             </motion.div>
 
@@ -94,9 +99,10 @@ export default function Contact() {
               <Button
                 href="https://www.linkedin.com/in/michaelyemini/"
                 className="group inline-flex items-center gap-2 bg-transparent text-silver-400 hover:text-silver-200 font-montserrat tracking-wide text-sm transition-colors duration-300"
+                aria-label="Connect with Michael on LinkedIn"
               >
                 Connect on LinkedIn
-                <span className="ml-2">→</span>
+                <span className="ml-2" aria-hidden="true">→</span>
               </Button>
             </motion.div>
           </motion.div>
@@ -106,8 +112,10 @@ export default function Contact() {
             variants={fadeInUp}
             className="mt-16 text-silver-400/60 font-inter text-sm"
           >
-            <p>Based in Tel Aviv, Israel</p>
-            <p>Operating Internationally</p>
+            <address className="not-italic">
+              <p>Based in Tel Aviv, Israel</p>
+              <p>Operating Internationally</p>
+            </address>
           </motion.div>
         </motion.div>
       </Container>
@@ -118,6 +126,7 @@ export default function Contact() {
         animate={{ scaleX: isInView ? 1 : 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
         className="absolute bottom-0 left-0 right-0"
+        aria-hidden="true"
       >
         <div className="h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-silver-400/10 to-transparent" />

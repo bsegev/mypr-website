@@ -179,6 +179,7 @@ export function ServicesList() {
       ref={sectionRef}
       id="services"
       className="relative py-32 bg-black-950"
+      aria-labelledby="services-list-heading"
     >
       {/* Background with fade in */}
       <motion.div
@@ -186,6 +187,7 @@ export function ServicesList() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="absolute inset-0"
+        aria-hidden="true"
       >
         <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
       </motion.div>
@@ -198,6 +200,19 @@ export function ServicesList() {
           viewport={{ once: true, margin: "-100px" }}
           className="space-y-24"
         >
+          {/* Section Header */}
+          <motion.div 
+            variants={fadeInUp}
+            className="text-center space-y-4"
+          >
+            <h2 id="services-list-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
+              Our Services
+            </h2>
+            <p className="text-silver-400 max-w-2xl mx-auto font-inter">
+              Comprehensive solutions to elevate your communications strategy
+            </p>
+          </motion.div>
+
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -206,6 +221,8 @@ export function ServicesList() {
               className={`flex flex-col ${
                 index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
               } gap-12 md:gap-20 items-center`}
+              role="article"
+              aria-labelledby={`${service.id}-heading`}
             >
               {/* Service Icon/Visual */}
               <div className="w-full md:w-1/3">
@@ -219,7 +236,7 @@ export function ServicesList() {
                   <div className="absolute inset-0">
                     <Image
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} - Visual representation`}
                       width={800}
                       height={600}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -229,12 +246,13 @@ export function ServicesList() {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.5 }}
+                      aria-hidden="true"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-br from-black-900/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-black-900/40 to-transparent" aria-hidden="true" />
                   </div>
                   
                   {/* Icon Container */}
-                  <div className="relative h-full flex items-center justify-center">
+                  <div className="relative h-full flex items-center justify-center" aria-hidden="true">
                     <motion.div 
                       initial={{ scale: 0.8, opacity: 0 }}
                       whileInView={{ scale: 1, opacity: 1 }}
@@ -249,10 +267,8 @@ export function ServicesList() {
 
               {/* Service Content */}
               <div className="w-full md:w-2/3 space-y-8">
-                <motion.div
-                  variants={fadeInUp}
-                >
-                  <h3 className="text-2xl md:text-3xl font-montserrat font-light tracking-wide text-silver-100 mb-4">
+                <motion.div variants={fadeInUp}>
+                  <h3 id={`${service.id}-heading`} className="text-2xl md:text-3xl font-montserrat font-light tracking-wide text-silver-100 mb-4">
                     {service.title}
                   </h3>
                   <p className="text-lg text-silver-400 font-inter font-light">
@@ -261,13 +277,18 @@ export function ServicesList() {
                 </motion.div>
 
                 {/* Service Details */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div 
+                  className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+                  role="list"
+                  aria-label={`${service.title} key features`}
+                >
                   {service.details.map((detail, detailIndex) => (
                     <motion.div 
                       key={detail.title}
                       variants={fadeInUp}
                       custom={detailIndex}
                       className="group relative p-6 rounded-lg bg-black-900/50 border border-silver-400/10 hover:border-silver-400/20 transition-colors"
+                      role="listitem"
                     >
                       <h4 className="text-silver-200 font-montserrat text-lg mb-2">
                         {detail.title}
@@ -280,6 +301,7 @@ export function ServicesList() {
                         initial={{ scaleX: 0 }}
                         whileHover={{ scaleX: 1 }}
                         transition={{ duration: 0.3 }}
+                        aria-hidden="true"
                       />
                     </motion.div>
                   ))}
@@ -297,6 +319,7 @@ export function ServicesList() {
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
         className="absolute bottom-0 left-0 right-0"
+        aria-hidden="true"
       >
         <div className="h-px bg-gradient-to-r from-transparent via-silver-400/20 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-silver-400/10 to-transparent" />

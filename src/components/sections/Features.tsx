@@ -101,6 +101,7 @@ export default function Features() {
       ref={sectionRef} 
       className="relative py-32 overflow-hidden bg-black-950 will-change-transform"
       id="expertise"
+      aria-labelledby="expertise-heading"
     >
       {/* Background fades in */}
       <motion.div
@@ -108,6 +109,7 @@ export default function Features() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
         className="absolute inset-0"
+        aria-hidden="true"
       >
         <div className="absolute inset-0 bg-gradient-radial from-black-900/50 via-black-950/30 to-transparent opacity-50" />
         <div className="absolute inset-0 bg-diagonal-texture bg-[length:30px_30px] opacity-5" />
@@ -126,7 +128,7 @@ export default function Features() {
             variants={fadeInUp}
             className="text-center space-y-4"
           >
-            <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
+            <h2 id="expertise-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
               Expertise
             </h2>
             <p className="text-silver-400 max-w-2xl mx-auto font-inter">
@@ -135,7 +137,7 @@ export default function Features() {
           </motion.div>
 
           {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <nav className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" aria-label="Services navigation">
             {features.map((feature) => (
               <Link 
                 key={feature.title}
@@ -147,6 +149,7 @@ export default function Features() {
                   setTimeout(() => scrollToSection(id), 100);
                 }}
                 className="relative group"
+                aria-label={`Learn more about ${feature.title}`}
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -164,6 +167,7 @@ export default function Features() {
                         ? 'bg-black-950 text-silver-100'
                         : 'bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300'
                     }`}
+                    aria-hidden="true"
                   >
                     {feature.icon}
                   </motion.div>
@@ -175,7 +179,7 @@ export default function Features() {
                 </motion.div>
               </Link>
             ))}
-          </div>
+          </nav>
         </motion.div>
       </Container>
     </section>

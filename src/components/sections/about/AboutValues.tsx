@@ -73,13 +73,17 @@ export function AboutValues() {
   const sectionRef = useRef<HTMLElement>(null)
 
   return (
-    <section ref={sectionRef} className="relative py-32 bg-silver-100">
+    <section 
+      ref={sectionRef} 
+      className="relative py-32 bg-silver-100"
+      aria-labelledby="values-heading"
+    >
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-diagonal-texture opacity-5" />
+      <div className="absolute inset-0 bg-diagonal-texture opacity-5" aria-hidden="true" />
       
       {/* Accent Lines */}
-      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-black-900/10 to-transparent" />
-      <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-black-900/10 to-transparent" />
+      <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-black-900/10 to-transparent" aria-hidden="true" />
+      <div className="absolute right-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-black-900/10 to-transparent" aria-hidden="true" />
 
       <Container>
         <div className="max-w-5xl mx-auto">
@@ -90,13 +94,13 @@ export function AboutValues() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
+            <h2 id="values-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
               Our Values
             </h2>
             <p className="text-lg font-inter font-light text-black-900/60 max-w-2xl mx-auto">
               Core principles that guide our approach to delivering exceptional results
             </p>
-            <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" />
+            <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-black-900/40 to-transparent" aria-hidden="true" />
           </motion.div>
 
           {/* Values Grid */}
@@ -105,6 +109,8 @@ export function AboutValues() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            role="list"
+            aria-label="Core values"
           >
             {values.map((value, index) => (
               <motion.div
@@ -114,8 +120,9 @@ export function AboutValues() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="group relative p-8 rounded-lg bg-white border border-black-900/5 hover:border-black-900/10 transition-colors"
+                role="listitem"
               >
-                <div className="mb-6 text-black-900/40 group-hover:text-black-900/60 transition-colors">
+                <div className="mb-6 text-black-900/40 group-hover:text-black-900/60 transition-colors" aria-hidden="true">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-montserrat font-medium text-black-900 mb-3">
@@ -124,7 +131,7 @@ export function AboutValues() {
                 <p className="text-base text-black-900/60 font-inter font-light leading-relaxed">
                   {value.description}
                 </p>
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </motion.div>
             ))}
           </motion.div>
@@ -132,7 +139,7 @@ export function AboutValues() {
       </Container>
 
       {/* Bottom Accent */}
-      <div className="absolute bottom-0 left-0 right-0">
+      <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
         <div className="h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent" />
         <div className="h-px mt-2 bg-gradient-to-r from-transparent via-black-900/5 to-transparent" />
       </div>
