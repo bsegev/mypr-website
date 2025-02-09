@@ -88,7 +88,7 @@ export function AboutHero() {
                 className="text-sm uppercase tracking-widest text-silver-400 font-montserrat"
                 role="doc-subtitle"
               >
-                Your Strategic PR & Digital Consulting Partner
+                Crafting Distinctive Public Images
               </motion.div>
               <h1 id="about-hero-heading" className="font-montserrat tracking-tight text-silver-100">
                 <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">

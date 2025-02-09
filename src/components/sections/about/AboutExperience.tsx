@@ -71,10 +71,10 @@ export function AboutExperience() {
             className="text-center mb-16"
           >
             <h2 id="experience-heading" className="text-4xl md:text-5xl font-montserrat font-light tracking-wide text-silver-100 mb-6">
-              Track Record
+              Experience
             </h2>
             <p className="text-xl text-silver-400 font-inter font-light max-w-3xl mx-auto">
-              Proven experience delivering results for industry leaders
+              Working with industry leaders across communications and digital strategy
             </p>
             <div className="mt-2 h-px w-24 mx-auto bg-gradient-to-r from-silver-400/40 to-transparent" aria-hidden="true" />
           </motion.div>

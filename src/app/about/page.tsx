@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { AboutHero } from '@/components/sections/about/AboutHero'
+import { AboutIntro } from '@/components/sections/about/AboutIntro'
 import { AboutStory } from '@/components/sections/about/AboutStory'
 import { AboutValues } from '@/components/sections/about/AboutValues'
 import { AboutExperience } from '@/components/sections/about/AboutExperience'
@@ -48,13 +49,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      <article>
-        <AboutHero />
-        <AboutStory />
-        <AboutValues />
-        <AboutExperience />
-        <AboutContact />
-      </article>
+      <AboutHero />
+      <AboutIntro />
+      <AboutStory />
+      <AboutValues />
+      <AboutExperience />
+      <AboutContact />
     </main>
   )
 } 

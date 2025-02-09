@@ -121,10 +121,10 @@ export function ServicesHero() {
           <motion.div variants={fadeInUp} className="mt-8 md:mt-12">
             <h1 id="services-hero-heading" className="font-montserrat tracking-tight text-silver-100">
               <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">
-                Bespoke PR & Digital
+                Bespoke PR
               </span>
               <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] font-light block mt-2 md:mt-4">
-                From <span className="font-semibold">Strategy</span> to Execution
+                & Digital Strategy
               </span>
             </h1>
             <motion.div 
@@ -140,7 +140,7 @@ export function ServicesHero() {
             variants={fadeInUp}
             className="text-body md:text-body-lg text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-6 md:mt-8 px-4 md:px-0"
           >
-            A full-spectrum approach to define, shape, and elevate your image through targeted communications and strategic digital presence.
+            From strategic planning to flawless execution, we define and elevate your image through targeted communications and innovative digital presence.
           </motion.p>
 
           {/* CTAs */}
