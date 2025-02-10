@@ -50,22 +50,24 @@ export function FeaturedService() {
             >
               <div>
                 <h2 id="featured-service-heading" className="font-montserrat text-3xl md:text-4xl text-black-950 mb-4">
-                  Israel Representation
+                  Your Ambassador in Israel
                 </h2>
                 <p className="text-lg md:text-xl text-black-900/80 font-light max-w-xl">
-                  Your trusted partner for establishing and growing your organization's presence in Israel.
+                  Whether you're an organization, business, or individual, I can represent you in Israel—ensuring you have the right connections, insights, and opportunities.
                 </p>
               </div>
 
               {/* Feature Points */}
               <div className="space-y-4" role="list" aria-label="Key features">
                 {[
-                  "On-ground representation in Israel & U.S.",
+                  "On-ground representation in Israel & the U.S.",
                   "Direct access to government officials",
                   "Philanthropy management & oversight",
                   "Political briefings & policy reports",
                   "Event organization & delegation hosting",
-                  "Strategic introductions & networking"
+                  "Strategic introductions & networking",
+                  "Unlock new opportunities in Israel",
+                  "Your trusted, go-to contact for everything Israel"
                 ].map((feature) => (
                   <motion.div
                     key={feature}
