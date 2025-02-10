@@ -97,7 +97,7 @@ export function FeaturedService() {
                   className="bg-black-950 text-silver-100 hover:bg-black-900 transition-colors duration-300"
                   aria-label="Explore partnership opportunities for Israel representation"
                 >
-                  Explore Partnership
+                  Explore Your Opportunities
                   <span className="ml-2" aria-hidden="true">→</span>
                 </Button>
               </div>
