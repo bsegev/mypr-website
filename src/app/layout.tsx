@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mypr-website.vercel.app'),
+  metadataBase: new URL('https://michaelyemini.com'),
   title: {
     default: 'Michael Yemini | Strategic PR & Digital Consulting',
     template: '%s | Michael Yemini PR'
@@ -20,21 +20,27 @@ export const metadata: Metadata = {
   creator: 'Michael Yemini',
   openGraph: {
     type: 'website',
-    url: 'https://mypr-website.vercel.app',
+    url: 'https://michaelyemini.com',
     locale: 'en_US',
     siteName: 'Michael Yemini PR',
     title: 'Michael Yemini | Strategic PR & Digital Consulting',
     description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions. Based in Tel Aviv, serving clients worldwide.',
     images: [
       {
-        url: 'https://mypr-website.vercel.app/images/og_home.png',
-        secureUrl: 'https://mypr-website.vercel.app/images/og_home.png',
+        url: 'https://michaelyemini.com/images/og_home.png',
+        secureUrl: 'https://michaelyemini.com/images/og_home.png',
         width: 1200,
         height: 1200,
         alt: 'Michael Yemini PR & Digital Strategy',
         type: 'image/png'
       }
     ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Michael Yemini | Strategic PR & Digital Consulting',
+    description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions.',
+    images: ['https://michaelyemini.com/images/og_home.png'],
   },
   robots: {
     index: true,
