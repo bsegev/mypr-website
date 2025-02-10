@@ -4,7 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import Image from 'next/image'
 
 export function FeaturedService() {
   return (
@@ -29,13 +28,24 @@ export function FeaturedService() {
               className="relative aspect-square"
             >
               <div className="absolute inset-0 rounded-2xl overflow-hidden">
-                <Image
-                  src="/images/israel-us-flags.jpg"
-                  alt="Israel and United States Partnership - Flags representing international collaboration"
-                  fill
-                  className="object-cover"
-                  priority
-                />
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                  onTimeUpdate={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    if (video.duration - video.currentTime <= 1) {
+                      video.classList.add('opacity-0');
+                    } else {
+                      video.classList.remove('opacity-0');
+                    }
+                  }}
+                >
+                  <source src="/videos/mypr-video-ambassador.mp4" type="video/mp4" />
+                </video>
                 <div className="absolute inset-0 bg-gradient-to-r from-black-950/40 to-transparent" aria-hidden="true" />
               </div>
             </motion.div>
