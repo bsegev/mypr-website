@@ -133,11 +133,11 @@ export default function Hero() {
             <Button 
               size="lg"
               onClick={openScheduler}
-              className="min-w-[240px] bg-silver-100 hover:bg-silver-200 text-black-950 hover:text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
-                hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
+              className="min-w-[240px] bg-white hover:bg-silver-50 [color:black] hover:[color:black] font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300 rounded-full
+                hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5 border border-transparent hover:border-silver-200/20"
             >
               Schedule a Consultation
-              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform text-black-950">→</span>
+              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform [color:black]">→</span>
             </Button>
             <Link 
               href="/about"
