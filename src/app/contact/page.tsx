@@ -14,8 +14,8 @@ export const metadata: Metadata = {
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: 'https://michaelyemini.com/images/og_contact_2024.png',
-        secureUrl: 'https://michaelyemini.com/images/og_contact_2024.png',
+        url: 'https://michaelyemini.com/images/og_contact-opt.png',
+        secureUrl: 'https://michaelyemini.com/images/og_contact-opt.png',
         width: 1200,
         height: 1200,
         alt: 'Contact Michael Yemini - PR & Digital Strategy',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Michael Yemini | PR & Digital Strategy',
     description: 'Connect with Michael Yemini for strategic PR consulting and digital communications.',
-    images: ['https://michaelyemini.com/images/og_contact_2024.png'],
+    images: ['https://michaelyemini.com/images/og_contact-opt.png'],
   },
   alternates: {
     canonical: 'https://michaelyemini.com/contact'

@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: 'https://michaelyemini.com/images/og_about_2024.png',
-        secureUrl: 'https://michaelyemini.com/images/og_about_2024.png',
+        url: 'https://michaelyemini.com/images/og_about-opt.png',
+        secureUrl: 'https://michaelyemini.com/images/og_about-opt.png',
         width: 1200,
         height: 1200,
         alt: 'About Michael Yemini - PR & Digital Strategy',

@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions. Based in Tel Aviv, serving clients worldwide.',
     images: [
       {
-        url: 'https://michaelyemini.com/images/og_home_2024.png',
-        secureUrl: 'https://michaelyemini.com/images/og_home_2024.png',
+        url: 'https://michaelyemini.com/images/og_home-opt.png',
+        secureUrl: 'https://michaelyemini.com/images/og_home-opt.png',
         width: 1200,
         height: 1200,
         alt: 'Michael Yemini PR & Digital Strategy',
