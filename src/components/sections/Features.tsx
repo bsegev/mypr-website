@@ -54,7 +54,7 @@ const features = [
     ),
   },
   {
-    title: "Israel Representation",
+    title: "Your Executive Ambassador in Israel",
     href: "/services#featured-service",
     featured: true,
     icon: (
