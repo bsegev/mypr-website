@@ -122,11 +122,11 @@ export function AboutHero() {
             >
               <Button 
                 onClick={scrollToStory}
-                className="group min-w-[200px] text-silver-400 hover:text-silver-200 transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
+                className="group min-w-[200px] text-silver-400 hover:text-silver-200 !important transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
                 aria-label="Read my professional story"
               >
                 My Story
-                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
+                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform text-silver-400 group-hover:text-silver-200" aria-hidden="true">↓</span>
               </Button>
               <Button 
                 onClick={openScheduler}
@@ -135,7 +135,7 @@ export function AboutHero() {
                 aria-label="Schedule a consultation meeting"
               >
                 Schedule a Consultation
-                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
+                <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform text-black-950" aria-hidden="true">→</span>
               </Button>
             </motion.div>
           </motion.div>

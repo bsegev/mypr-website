@@ -137,15 +137,15 @@ export default function Hero() {
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
             >
               Schedule a Consultation
-              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform">→</span>
+              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform text-black-950">→</span>
             </Button>
             <Link 
               href="/about"
-              className="group text-silver-400 hover:text-silver-200 transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center gap-2"
+              className="group text-silver-400 hover:text-silver-200 !important transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center gap-2"
             >
               Learn More About MYPR
               <motion.span 
-                className="text-xl"
+                className="text-xl text-silver-400 group-hover:text-silver-200"
                 animate={{ x: [0, 3, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >→</motion.span>

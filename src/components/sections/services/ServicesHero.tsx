@@ -154,11 +154,11 @@ export function ServicesHero() {
           >
             <Button 
               onClick={scrollToFeaturedService}
-              className="w-full sm:w-auto group text-silver-400 hover:text-silver-200 transition-colors duration-300 text-body-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
+              className="w-full sm:w-auto group text-silver-400 hover:text-silver-200 !important transition-colors duration-300 text-body-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
               aria-label="View our services"
             >
               Explore Services
-              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
+              <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform text-silver-400 hover:text-silver-200" aria-hidden="true">↓</span>
             </Button>
             <Button 
               onClick={openScheduler}
@@ -168,7 +168,7 @@ export function ServicesHero() {
             >
               Schedule a Consultation
               <motion.span 
-                className="text-lg"
+                className="text-lg text-black-950"
                 animate={{ x: [0, 3, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 aria-hidden="true"
