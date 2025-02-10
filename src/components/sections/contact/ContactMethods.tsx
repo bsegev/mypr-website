@@ -1,10 +1,10 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { getCalApi } from "@calcom/embed-react"
+import { useCalendar } from '@/lib/providers/CalendarProvider'
 
 const methods = [
     {
@@ -67,29 +67,7 @@ export function ContactMethods() {
   const [copiedEmail, setCopiedEmail] = useState("");
   const [isDarkBg, setIsDarkBg] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", {
-        theme: "light"
-      });
-      cal("preload", {
-        calLink: "michaelyemini/45min"
-      });
-    })();
-  }, []);
-
-  const handleScheduleClick = async () => {
-    const cal = await getCalApi();
-    cal("modal", {
-      calLink: "michaelyemini/45min",
-      config: {
-        layout: "month_view",
-        theme: "light"
-      }
-    });
-  };
+  const { openScheduler } = useCalendar();
 
   const handleEmailClick = async (email: string) => {
     await navigator.clipboard.writeText(email);
@@ -101,7 +79,7 @@ export function ContactMethods() {
   const getButtonProps = (method: typeof methods[0]) => {
     if (method.type === 'calendar') {
       return {
-        onClick: handleScheduleClick,
+        onClick: openScheduler,
         'aria-label': `${method.buttonText} - ${method.title}`
       };
     }

@@ -4,8 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { useRef, useEffect } from 'react'
-import { getCalApi } from "@calcom/embed-react"
+import { useRef } from 'react'
+import { useCalendar } from '@/lib/providers/CalendarProvider'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -29,32 +29,11 @@ export default function Hero() {
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 150])
   const videoOpacity = useTransform(scrollY, 
-    [0, 100, 300], // scroll values
-    [0.3, 0.15, 0] // opacity values
+    [0, 100, 300],
+    [0.3, 0.15, 0]
   )
   
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", {
-        theme: "light"
-      });
-      cal("preload", {
-        calLink: "michaelyemini/45min"
-      });
-    })();
-  }, []);
-  
-  const handleScheduleClick = async () => {
-    const cal = await getCalApi();
-    cal("modal", {
-      calLink: "michaelyemini/45min",
-      config: {
-        layout: "month_view",
-        theme: "light"
-      }
-    });
-  };
+  const { openScheduler } = useCalendar();
   
   return (
     <section ref={sectionRef} className="relative min-h-[90vh] flex items-center overflow-hidden bg-black-900 bg-pinstripe">
@@ -153,7 +132,7 @@ export default function Hero() {
           >
             <Button 
               size="lg"
-              onClick={handleScheduleClick}
+              onClick={openScheduler}
               className="min-w-[240px] bg-silver-100 hover:bg-silver-200 text-navy-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
             >

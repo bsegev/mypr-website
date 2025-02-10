@@ -3,8 +3,8 @@
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { useRef, useEffect } from 'react'
-import { getCalApi } from "@calcom/embed-react"
+import { useRef } from 'react'
+import { useCalendar } from '@/lib/providers/CalendarProvider'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -25,23 +25,12 @@ const containerVariants = {
 
 export function ServicesHero() {
   const sectionRef = useRef<HTMLElement>(null)
+  const { openScheduler } = useCalendar();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
   })
-
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi();
-      cal("ui", {
-        theme: "light"
-      });
-      cal("preload", {
-        calLink: "michaelyemini/45min"
-      });
-    })();
-  }, []);
 
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -61,17 +50,6 @@ export function ServicesHero() {
         behavior: 'smooth'
       });
     }
-  };
-
-  const handleScheduleClick = async () => {
-    const cal = await getCalApi();
-    cal("modal", {
-      calLink: "michaelyemini/45min",
-      config: {
-        layout: "month_view",
-        theme: "light"
-      }
-    });
   };
 
   return (
@@ -183,7 +161,7 @@ export function ServicesHero() {
               <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
             </Button>
             <Button 
-              onClick={handleScheduleClick}
+              onClick={openScheduler}
               className="w-full sm:w-auto min-w-[240px] bg-silver-100 hover:bg-silver-200 text-navy-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
               aria-label="Schedule a consultation meeting"
