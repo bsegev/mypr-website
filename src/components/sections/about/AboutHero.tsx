@@ -14,9 +14,11 @@ import { Button } from '@/components/ui/Button'
 import { useRef } from 'react'
 import { FloatingIcons } from './FloatingIcons'
 import { scrollToSection } from '@/lib/utils'
+import { useCalendar } from '@/lib/providers/CalendarProvider'
 
 export function AboutHero() {
   const sectionRef = useRef<HTMLElement>(null)
+  const { openScheduler } = useCalendar();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -127,12 +129,12 @@ export function AboutHero() {
                 <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">↓</span>
               </Button>
               <Button 
-                href="/contact"
-                className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-navy-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+                onClick={openScheduler}
+                className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-black-950 hover:text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                   hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
-                aria-label="Contact Michael Yemini"
+                aria-label="Schedule a consultation meeting"
               >
-                Get in Touch
+                Schedule a Consultation
                 <span className="ml-2 text-lg group-hover:translate-x-1 transition-transform" aria-hidden="true">→</span>
               </Button>
             </motion.div>
