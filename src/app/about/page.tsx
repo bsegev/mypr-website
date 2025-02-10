@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         secureUrl: 'https://mypr-website.vercel.app/images/og_about.png',
         width: 1200,
         height: 1200,
-        alt: 'Michael Yemini - PR & Communications Expert',
+        alt: 'Michael Yemini - PR & Communications Expert. Photo by Rami Zarnegar',
         type: 'image/png'
       }
     ]

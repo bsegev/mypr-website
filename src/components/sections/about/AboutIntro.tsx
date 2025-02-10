@@ -22,24 +22,38 @@ export function AboutIntro() {
             className="grid md:grid-cols-[2fr,3fr] gap-12 items-center"
           >
             {/* Image Side */}
-            <div className="relative">
+            <div className="relative group perspective-1000">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative aspect-[4/5] rounded-lg overflow-hidden"
+                className="relative aspect-[4/5] rounded-lg overflow-hidden transform-gpu transition-transform duration-300 ease-out will-change-transform
+                  hover:scale-[1.02] group-hover:[transform:rotateX(2deg)_rotateY(-4deg)]"
               >
                 <Image
                   src="/images/my_image.jpg"
                   alt="Michael Yemini - PR and Digital Strategy Consultant"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black-950/80 via-transparent to-transparent" />
+                {/* Shine effect overlay */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300
+                    bg-gradient-to-tr from-transparent via-silver-100 to-transparent translate-x-full group-hover:translate-x-[-180%]
+                    transition-transform duration-1000 ease-in-out"
+                  aria-hidden="true"
+                />
               </motion.div>
+              {/* Subtle shadow */}
+              <div 
+                className="absolute -inset-0.5 bg-gradient-to-tr from-silver-400/0 to-silver-400/20 opacity-0 group-hover:opacity-100 
+                  blur-lg transition-opacity duration-500 -z-10"
+                aria-hidden="true"
+              />
             </div>
 
             {/* Text Side */}

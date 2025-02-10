@@ -3,7 +3,8 @@
 import { motion, useInView } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
+import { getCalApi } from "@calcom/embed-react"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -28,6 +29,29 @@ export default function Contact() {
     margin: "-10% 0px -10% 0px",
     once: true 
   })
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        theme: "light"
+      });
+      cal("preload", {
+        calLink: "michaelyemini/45min"
+      });
+    })();
+  }, []);
+
+  const handleScheduleClick = async () => {
+    const cal = await getCalApi();
+    cal("modal", {
+      calLink: "michaelyemini/45min",
+      config: {
+        layout: "month_view",
+        theme: "light"
+      }
+    });
+  };
 
   return (
     <section 
@@ -83,7 +107,7 @@ export default function Contact() {
               whileHover={{ y: -2, transition: { duration: 0.2 } }}
             >
               <Button 
-                href="https://calendly.com/your-link"
+                onClick={handleScheduleClick}
                 className="group relative overflow-hidden bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300"
                 aria-label="Schedule a consultation meeting"
               >

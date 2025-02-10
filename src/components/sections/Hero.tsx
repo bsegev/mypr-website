@@ -4,7 +4,8 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import Link from 'next/link'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
+import { getCalApi } from "@calcom/embed-react"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -31,6 +32,29 @@ export default function Hero() {
     [0, 100, 300], // scroll values
     [0.3, 0.15, 0] // opacity values
   )
+  
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        theme: "light"
+      });
+      cal("preload", {
+        calLink: "michaelyemini/45min"
+      });
+    })();
+  }, []);
+  
+  const handleScheduleClick = async () => {
+    const cal = await getCalApi();
+    cal("modal", {
+      calLink: "michaelyemini/45min",
+      config: {
+        layout: "month_view",
+        theme: "light"
+      }
+    });
+  };
   
   return (
     <section ref={sectionRef} className="relative min-h-[90vh] flex items-center overflow-hidden bg-black-900 bg-pinstripe">
@@ -97,7 +121,7 @@ export default function Hero() {
           {/* Logo fade in first */}
           <motion.span 
             variants={fadeInUp}
-            className="text-2xl md:text-3xl tracking-[0.2em] font-light block mb-8 text-silver-100"
+            className="text-3xl md:text-4xl lg:text-5xl tracking-[0.2em] font-extralight block mb-12 md:mb-16 text-silver-100"
           >
             MYPR
           </motion.span>
@@ -105,10 +129,10 @@ export default function Hero() {
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
             <h1 className="font-montserrat tracking-tight text-silver-100">
-              <div className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] space-y-0">
-                <div className="leading-[1.1]">PR & Digital</div>
-                <div className="font-light leading-[1.1]">
-                  Strategy
+              <div className="uppercase leading-[1.1] space-y-2">
+                <div className="text-[1.25rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1.1] text-silver-400">Define, Shape & Elevate Your</div>
+                <div className="text-display-sm md:text-display-md lg:text-display-lg font-medium leading-[1.1]">
+                  Public Image
                 </div>
               </div>
             </h1>
@@ -129,7 +153,7 @@ export default function Hero() {
           >
             <Button 
               size="lg"
-              href="/contact"
+              onClick={handleScheduleClick}
               className="min-w-[240px] bg-silver-100 hover:bg-silver-200 text-navy-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
             >

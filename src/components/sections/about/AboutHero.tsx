@@ -120,8 +120,7 @@ export function AboutHero() {
             >
               <Button 
                 onClick={scrollToStory}
-                className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-black-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
-                  hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
+                className="group min-w-[200px] text-silver-400 hover:text-silver-200 transition-colors duration-300 text-sm uppercase font-montserrat tracking-widest flex items-center justify-center gap-2"
                 aria-label="Read my professional story"
               >
                 My Story
@@ -129,7 +128,8 @@ export function AboutHero() {
               </Button>
               <Button 
                 href="/contact"
-                className="group min-w-[200px] border border-silver-400/20 hover:border-silver-400/40 text-silver-100 font-montserrat tracking-wide uppercase text-sm transition-all duration-300"
+                className="min-w-[200px] bg-silver-100 hover:bg-silver-200 text-navy-950 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300
+                  hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5"
                 aria-label="Contact Michael Yemini"
               >
                 Get in Touch

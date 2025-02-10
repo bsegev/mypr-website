@@ -8,23 +8,27 @@
 import { motion, useInView } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
+import { getCalApi } from "@calcom/embed-react"
 
 const services = [
   {
     title: "PR & Communications",
     duration: "45 min",
-    description: "Strategic communications planning and media relations consultation"
+    description: "Strategic communications planning and media relations consultation",
+    calLink: "michaelyemini/45min"
   },
   {
     title: "Digital Strategy",
     duration: "45 min",
-    description: "Social media and digital presence optimization discussion"
+    description: "Social media and digital presence optimization discussion",
+    calLink: "michaelyemini/45min"
   },
   {
     title: "Crisis Management",
-    duration: "60 min",
-    description: "Crisis prevention and reputation management planning"
+    duration: "45 min",
+    description: "Crisis prevention and reputation management planning",
+    calLink: "michaelyemini/45min"
   }
 ]
 
@@ -60,6 +64,32 @@ const serviceVariants = {
 export function ServicesContact() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true })
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        theme: "light"
+      });
+      // Preload all service calendars
+      services.forEach(service => {
+        cal("preload", {
+          calLink: service.calLink
+        });
+      });
+    })();
+  }, []);
+
+  const handleScheduleClick = async (calLink: string) => {
+    const cal = await getCalApi();
+    cal("modal", {
+      calLink,
+      config: {
+        layout: "month_view",
+        theme: "light"
+      }
+    });
+  };
 
   return (
     <section 
@@ -138,7 +168,7 @@ export function ServicesContact() {
                   transition={{ duration: 0.2 }}
                 >
                   <Button 
-                    href={`https://calendly.com/your-link/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    onClick={() => handleScheduleClick(service.calLink)}
                     className="w-full bg-transparent border border-silver-400/20 hover:border-silver-400/40 text-silver-100 py-2 font-montserrat tracking-wide text-sm transition-all duration-300
                       hover:bg-silver-400/5"
                     aria-label={`Schedule a ${service.duration} ${service.title} consultation`}

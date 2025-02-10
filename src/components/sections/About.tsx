@@ -72,17 +72,24 @@ export default function About() {
                 initial={{ scale: 1.1, opacity: 0 }}
                 whileInView={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1.2 }}
-                className="relative w-full h-full rounded-lg overflow-hidden"
+                className="relative w-full h-full rounded-lg overflow-hidden group"
               >
                 <Image
                   src="/images/my_image.jpg"
                   alt="Michael Yemini - PR and Digital Strategy Consultant"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-top transition-transform duration-700 scale-105 group-hover:scale-100"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   priority
                 />
               </motion.div>
+              <div className="absolute bottom-0 left-0 right-0">
+                <div className="bg-white/90 backdrop-blur-sm py-2 px-4">
+                  <span className="text-xs text-black-900/80 font-inter italic">
+                    Photo by Rami Zarnegar
+                  </span>
+                </div>
+              </div>
             </div>
           </motion.div>
 

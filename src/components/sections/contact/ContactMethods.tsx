@@ -1,15 +1,16 @@
 "use client"
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Container } from '@/components/ui/Container'
 import { Button } from '@/components/ui/Button'
+import { getCalApi } from "@calcom/embed-react"
 
 const methods = [
     {
       title: "Schedule a Meeting",
       description:
-        "Prefer a direct conversation? Book a 30-minute consultation to discuss your needs.",
+        "Prefer a direct conversation? Book a 45-minute meeting to discuss your needs.",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -20,7 +21,7 @@ const methods = [
           />
         </svg>
       ),
-      href: "https://calendly.com/michaelyemini",
+      type: "calendar",
       buttonText: "Book a Meeting",
     },
     {
@@ -49,8 +50,9 @@ const methods = [
           />
         </svg>
       ),
-      href: "mailto:michael@mypr.co.il",
-      buttonText: "Send Email",
+      type: "email",
+      email: "michaelyemini@gmail.com",
+      buttonText: "Copy Email",
     },
   ];  
 
@@ -61,8 +63,63 @@ const fadeInUp = {
 }
 
 export function ContactMethods() {
+  const [showCopied, setShowCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState("");
+  const [isDarkBg, setIsDarkBg] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi();
+      cal("ui", {
+        theme: "light"
+      });
+      cal("preload", {
+        calLink: "michaelyemini/45min"
+      });
+    })();
+  }, []);
+
+  const handleScheduleClick = async () => {
+    const cal = await getCalApi();
+    cal("modal", {
+      calLink: "michaelyemini/45min",
+      config: {
+        layout: "month_view",
+        theme: "light"
+      }
+    });
+  };
+
+  const handleEmailClick = async (email: string) => {
+    await navigator.clipboard.writeText(email);
+    setCopiedEmail(email);
+    setShowCopied(true);
+    setTimeout(() => setShowCopied(false), 4000);
+  };
+
+  const getButtonProps = (method: typeof methods[0]) => {
+    if (method.type === 'calendar') {
+      return {
+        onClick: handleScheduleClick,
+        'aria-label': `${method.buttonText} - ${method.title}`
+      };
+    }
+    if (method.type === 'email') {
+      return {
+        onClick: () => handleEmailClick(method.email!),
+        'aria-label': `Copy email address to clipboard`
+      };
+    }
+    return {
+      href: method.href,
+      'aria-label': `${method.buttonText} - ${method.title}`
+    };
+  };
+
   return (
     <section 
+      ref={sectionRef}
       className="relative py-32 bg-silver-100 overflow-hidden"
       aria-labelledby="contact-methods-heading"
     >
@@ -101,19 +158,59 @@ export function ContactMethods() {
                   <p className="text-body md:text-body-lg text-black-900/60 font-inter font-light">
                     {method.description}
                   </p>
-                  <Button 
-                    href={method.href}
-                    className="w-full bg-black-900 hover:bg-black-800 text-silver-100 py-3 font-montserrat tracking-wide text-sm transition-all duration-300
-                      hover:shadow-lg hover:shadow-black-900/10"
-                    aria-label={`${method.buttonText} - ${method.title}`}
-                  >
-                    {method.buttonText}
-                  </Button>
+                  <div className="relative">
+                    <Button 
+                      {...getButtonProps(method)}
+                      className="w-full bg-black-900 hover:bg-black-800 text-silver-100 py-3 font-montserrat tracking-wide text-sm transition-all duration-300
+                        hover:shadow-lg hover:shadow-black-900/10"
+                    >
+                      {method.buttonText}
+                    </Button>
+                    {method.type === 'email' && showCopied && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="absolute left-0 right-0 text-center mt-2"
+                      >
+                        <span className="text-xs text-green-600 font-medium flex items-center justify-center gap-1">
+                          <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          Email address copied
+                        </span>
+                      </motion.div>
+                    )}
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
               </motion.div>
             ))}
           </div>
+
+          {/* Copied Email Toast */}
+          <AnimatePresence>
+            {showCopied && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="fixed bottom-4 left-4 right-4 md:left-1/2 md:right-auto md:bottom-8 md:-translate-x-1/2 
+                  backdrop-blur-md bg-black-900/95 text-silver-100 border border-silver-200/10 
+                  px-4 py-2.5 rounded-lg shadow-xl shadow-black-900/20 z-50 max-w-[90vw] md:max-w-md"
+                role="alert"
+              >
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 md:w-5 md:h-5 shrink-0 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="font-montserrat text-xs md:text-sm font-medium">
+                    Email address copied successfully. Paste it and send me an email to get in touch!
+                  </span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           {/* Location Info */}
           <motion.div 
