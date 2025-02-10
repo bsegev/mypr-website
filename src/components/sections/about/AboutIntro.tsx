@@ -22,38 +22,38 @@ export function AboutIntro() {
             className="grid md:grid-cols-[2fr,3fr] gap-12 items-center"
           >
             {/* Image Side */}
-            <div className="relative group perspective-1000">
+            <div className="relative group/image">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="relative aspect-[4/5] rounded-lg overflow-hidden transform-gpu transition-transform duration-300 ease-out will-change-transform
-                  hover:scale-[1.02] group-hover:[transform:rotateX(2deg)_rotateY(-4deg)]"
+                className="relative aspect-[4/5] rounded-lg overflow-hidden"
               >
-                <Image
-                  src="/images/my_image.jpg"
-                  alt="Michael Yemini - PR and Digital Strategy Consultant"
-                  fill
-                  className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black-950/80 via-transparent to-transparent" />
-                {/* Shine effect overlay */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300
-                    bg-gradient-to-tr from-transparent via-silver-100 to-transparent translate-x-full group-hover:translate-x-[-180%]
-                    transition-transform duration-1000 ease-in-out"
-                  aria-hidden="true"
-                />
+                {/* Main Image */}
+                <div className="relative w-full h-full transform-gpu transition-transform duration-1000 ease-out will-change-transform
+                  group-hover/image:translate-y-[-8px]">
+                  <Image
+                    src="/images/my_image.jpg"
+                    alt="Michael Yemini - PR and Digital Strategy Consultant"
+                    fill
+                    className="object-cover object-top transition-all duration-1000 ease-out"
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    priority
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black-950/90 via-black-950/20 to-transparent 
+                    opacity-100 transition-all duration-1000 ease-out group-hover/image:opacity-80" />
+                </div>
+
+                {/* Subtle Border */}
+                <div className="absolute inset-0 rounded-lg transition-all duration-1000 ease-out
+                  bg-gradient-to-tr from-silver-400/0 via-silver-400/10 to-silver-400/0 opacity-0 group-hover/image:opacity-100" />
+                
+                {/* Ambient Light */}
+                <div className="absolute -inset-1 rounded-xl bg-gradient-to-tr from-black-950/0 via-silver-400/5 to-black-950/0 
+                  opacity-0 group-hover/image:opacity-100 blur-xl transition-all duration-1000 ease-out -z-10" />
               </motion.div>
-              {/* Subtle shadow */}
-              <div 
-                className="absolute -inset-0.5 bg-gradient-to-tr from-silver-400/0 to-silver-400/20 opacity-0 group-hover:opacity-100 
-                  blur-lg transition-opacity duration-500 -z-10"
-                aria-hidden="true"
-              />
             </div>
 
             {/* Text Side */}
