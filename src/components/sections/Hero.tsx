@@ -106,9 +106,9 @@ export default function Hero() {
           <motion.div variants={fadeInUp}>
             <h1 className="font-montserrat tracking-tight text-silver-100">
               <div className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] space-y-0">
-                <div className="leading-[1.1]">Strategic PR</div>
+                <div className="leading-[1.1]">PR & Digital</div>
                 <div className="font-light leading-[1.1]">
-                  <span className="font-semibold">&amp; Digital</span> Consulting
+                  Strategy
                 </div>
               </div>
             </h1>
