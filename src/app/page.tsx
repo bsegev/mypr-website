@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: 'https://mypr-website.vercel.app/images/og_home.png',
-        secureUrl: 'https://mypr-website.vercel.app/images/og_home.png',
+        url: 'https://michaelyemini.com/images/og_home_2024.png',
+        secureUrl: 'https://michaelyemini.com/images/og_home_2024.png',
         width: 1200,
         height: 1200,
         alt: 'Michael Yemini PR & Digital Strategy',
@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Michael Yemini | Strategic PR & Digital Consulting',
     description: 'Transform your communications strategy with expert PR consulting and digital solutions.',
-    images: ['https://mypr-website.vercel.app/images/og_home.png'],
+    images: ['https://michaelyemini.com/images/og_home_2024.png'],
   },
   alternates: {
-    canonical: 'https://mypr-website.vercel.app'
+    canonical: 'https://michaelyemini.com'
   },
   keywords: [
     'PR Consulting',

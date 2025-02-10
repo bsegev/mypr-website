@@ -27,20 +27,14 @@ export const metadata: Metadata = {
     description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions. Based in Tel Aviv, serving clients worldwide.',
     images: [
       {
-        url: 'https://michaelyemini.com/images/og_home.png',
-        secureUrl: 'https://michaelyemini.com/images/og_home.png',
+        url: 'https://michaelyemini.com/images/og_home_2024.png',
+        secureUrl: 'https://michaelyemini.com/images/og_home_2024.png',
         width: 1200,
         height: 1200,
         alt: 'Michael Yemini PR & Digital Strategy',
         type: 'image/png'
       }
     ]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Michael Yemini | Strategic PR & Digital Consulting',
-    description: 'Transform your communications strategy with expert PR consulting, crisis management, and digital solutions.',
-    images: ['https://michaelyemini.com/images/og_home.png'],
   },
   robots: {
     index: true,

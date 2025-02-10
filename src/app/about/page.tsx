@@ -13,22 +13,22 @@ export const metadata: Metadata = {
     title: 'About Michael Yemini | PR & Communications Expert',
     description: 'Learn about Michael Yemini\'s proven approach to strategic PR, crisis management, and digital communications. Expertise in Israeli and international markets.',
     type: 'website',
-    url: 'https://mypr-website.vercel.app/about',
+    url: 'https://michaelyemini.com/about',
     locale: 'en_US',
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: 'https://mypr-website.vercel.app/images/og_about.png',
-        secureUrl: 'https://mypr-website.vercel.app/images/og_about.png',
+        url: 'https://michaelyemini.com/images/og_about_2024.png',
+        secureUrl: 'https://michaelyemini.com/images/og_about_2024.png',
         width: 1200,
         height: 1200,
-        alt: 'Michael Yemini - PR & Communications Expert. Photo by Rami Zarnegar',
+        alt: 'About Michael Yemini - PR & Digital Strategy',
         type: 'image/png'
       }
     ]
   },
   alternates: {
-    canonical: 'https://mypr-website.vercel.app/about'
+    canonical: 'https://michaelyemini.com/about'
   },
   keywords: [
     'Michael Yemini',

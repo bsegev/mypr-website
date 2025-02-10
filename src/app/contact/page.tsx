@@ -9,16 +9,16 @@ export const metadata: Metadata = {
     title: 'Contact Michael Yemini | PR & Digital Strategy',
     description: 'Connect with Michael Yemini for strategic PR consulting, crisis management, and digital communications. Schedule a consultation to transform your communications strategy.',
     type: 'website',
-    url: 'https://mypr-website.vercel.app/contact',
+    url: 'https://michaelyemini.com/contact',
     locale: 'en_US',
     siteName: 'Michael Yemini PR',
     images: [
       {
-        url: 'https://mypr-website.vercel.app/images/og_contact.png',
-        secureUrl: 'https://mypr-website.vercel.app/images/og_contact.png',
+        url: 'https://michaelyemini.com/images/og_contact_2024.png',
+        secureUrl: 'https://michaelyemini.com/images/og_contact_2024.png',
         width: 1200,
         height: 1200,
-        alt: 'Contact Michael Yemini - PR & Digital Strategy Consultant',
+        alt: 'Contact Michael Yemini - PR & Digital Strategy',
         type: 'image/png'
       }
     ]
@@ -27,10 +27,10 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Michael Yemini | PR & Digital Strategy',
     description: 'Connect with Michael Yemini for strategic PR consulting and digital communications.',
-    images: ['https://mypr-website.vercel.app/images/og_contact.png'],
+    images: ['https://michaelyemini.com/images/og_contact_2024.png'],
   },
   alternates: {
-    canonical: 'https://mypr-website.vercel.app/contact'
+    canonical: 'https://michaelyemini.com/contact'
   },
   keywords: [
     'Contact PR Consultant',
