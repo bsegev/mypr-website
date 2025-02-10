@@ -44,7 +44,7 @@ export function FeaturedService() {
                     }
                   }}
                 >
-                  <source src="/videos/mypr-video-ambassador.mp4" type="video/mp4" />
+                  <source src="/videos/mypr-video-ambassador-2.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-r from-black-950/40 to-transparent" aria-hidden="true" />
               </div>
