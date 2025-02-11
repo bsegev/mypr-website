@@ -60,7 +60,7 @@ export function FeaturedService() {
             >
               <div>
                 <h2 id="featured-service-heading" className="font-montserrat text-3xl md:text-4xl text-black-950 mb-4">
-                  Your Ambassador in Israel
+                  Your Executive Ambassador in Israel
                 </h2>
                 <p className="text-lg md:text-xl text-black-900/80 font-light max-w-xl">
                   Whether you're an organization, business, or individual, I can represent you in Israel—ensuring you have the right connections, insights, and opportunities.
