@@ -1,0 +1,121 @@
+"use client"
+
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Container } from '@/components/ui/Container'
+import { Button } from '@/components/ui/Button'
+
+export function FeaturedService() {
+  return (
+    <section 
+      id="featured-service"
+      className="relative py-24 bg-silver-100 overflow-hidden"
+      aria-labelledby="featured-service-heading"
+      dir="rtl"
+    >
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 bg-diagonal-texture opacity-5" aria-hidden="true" />
+      
+      <Container>
+        <div className="relative">
+          {/* Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Right Column - Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-8"
+            >
+              <div>
+                <h2 id="featured-service-heading" className="font-montserrat text-3xl md:text-4xl text-black-950 mb-4">
+                  לחברות בחו״ל – הנציג העסקי שלכם בישראל
+                </h2>
+                <p className="text-lg md:text-xl text-black-900/80 font-light max-w-xl">
+                  בין אם אתם ארגון, עסק או יחיד, אני יכול לייצג אתכם בישראל – ולהבטיח שיהיו לכם הקשרים, התובנות וההזדמנויות הנכונות.
+                </p>
+              </div>
+
+              {/* Feature Points */}
+              <div className="space-y-4" role="list" aria-label="תכונות מרכזיות">
+                {[
+                  "ייצוג מקומי בישראל ובארה״ב",
+                  "גישה ישירה לגורמי ממשל",
+                  "ניהול ופיקוח על פעילות פילנתרופית",
+                  "תדרוכים פוליטיים ודו״חות מדיניות",
+                  "ארגון אירועים ואירוח משלחות",
+                  "קשרים אסטרטגיים ונטוורקינג",
+                  "פתיחת הזדמנויות חדשות בישראל",
+                  "איש הקשר האמין שלכם לכל דבר בישראל"
+                ].map((feature) => (
+                  <motion.div
+                    key={feature}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="flex gap-3 items-center"
+                    role="listitem"
+                  >
+                    <div className="flex-shrink-0 w-5 h-5" aria-hidden="true">
+                      <svg className="w-5 h-5 text-black-950" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <p className="text-lg text-black-900/90 font-medium">
+                      {feature}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <div className="pt-4">
+                <Button
+                  href="/he/contact"
+                  className="bg-black-950 text-silver-100 hover:bg-black-900 transition-colors duration-300"
+                  aria-label="גלה הזדמנויות לשיתוף פעולה וייצוג בישראל"
+                >
+                  גלה את ההזדמנויות שלך
+                  <span className="mr-2" aria-hidden="true">←</span>
+                </Button>
+              </div>
+            </motion.div>
+
+            {/* Left Column - Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative aspect-square"
+            >
+              <div className="absolute inset-0 rounded-2xl overflow-hidden">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="auto"
+                  className="w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                  onTimeUpdate={(e) => {
+                    const video = e.target as HTMLVideoElement;
+                    if (video.duration - video.currentTime <= 1) {
+                      video.classList.add('opacity-0');
+                    } else {
+                      video.classList.remove('opacity-0');
+                    }
+                  }}
+                >
+                  <source src="/videos/mypr-video-ambassador-2.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-l from-black-950/40 to-transparent" aria-hidden="true" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  )
+} 

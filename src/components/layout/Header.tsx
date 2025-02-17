@@ -68,6 +68,12 @@ export function Header() {
   const pathname = usePathname()
   const lottieRef = useRef<any>(null)
 
+  // Get Hebrew equivalent path
+  const getHebrewPath = (path: string) => {
+    if (path === '/') return '/he'
+    return `/he${path}`
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
@@ -121,7 +127,7 @@ export function Header() {
               </span>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation with Language Selector */}
             <div className="hidden md:flex items-center gap-8">
               {navItems.map((item) => (
                 <Link
@@ -143,17 +149,39 @@ export function Header() {
                   <div className="absolute left-0 right-0 h-px bg-gradient-to-r from-transparent via-silver-400/30 to-transparent bottom-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ))}
+              
+              {/* Language Selector */}
+              <Link
+                href={getHebrewPath(pathname)}
+                className="relative group px-3 py-1 border border-silver-400/20 rounded-full hover:border-silver-400/40 transition-colors"
+              >
+                <span className="text-body-sm font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors">
+                  עב
+                </span>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden relative w-10 h-10 flex items-center justify-center text-silver-100 hover:text-silver-200 transition-colors z-[60]"
-              aria-expanded={isMobileMenuOpen}
-              aria-label="Toggle menu"
-            >
-              <LottieMenuButton isOpen={isMobileMenuOpen} />
-            </button>
+            <div className="md:hidden flex items-center gap-4">
+              {/* Mobile Language Selector */}
+              <Link
+                href={getHebrewPath(pathname)}
+                className="relative group px-3 py-1 border border-silver-400/20 rounded-full hover:border-silver-400/40 transition-colors"
+              >
+                <span className="text-body-sm font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors">
+                  עב
+                </span>
+              </Link>
+
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="relative w-10 h-10 flex items-center justify-center text-silver-100 hover:text-silver-200 transition-colors z-[60]"
+                aria-expanded={isMobileMenuOpen}
+                aria-label="Toggle menu"
+              >
+                <LottieMenuButton isOpen={isMobileMenuOpen} />
+              </button>
+            </div>
           </nav>
         </Container>
 

@@ -71,6 +71,15 @@ const config: Config = {
         'xl': '1280px',
         '2xl': '1536px',
       },
+      keyframes: {
+        'gentle-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(3px)' }
+        }
+      },
+      animation: {
+        'gentle-bounce': 'gentle-bounce 2s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
