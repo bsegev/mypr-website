@@ -87,7 +87,7 @@ export default function Contact() {
             className="space-y-4 mb-12"
           >
             <h2 id="contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
-              בוא נדבר
+            צור קשר
             </h2>
             <p className="text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
               רוצה לקדם את העסק שלך? מעוניין לשפר את התדמית שלך?
@@ -108,9 +108,9 @@ export default function Contact() {
               <Button 
                 onClick={handleScheduleClick}
                 className="group relative overflow-hidden bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300"
-                aria-label="לחץ כאן לקביעת פגישה"
+                aria-label="קביעת פגישה"
               >
-                לחץ כאן לקביעת פגישה
+                קביעת פגישה
                 <span className="mr-2" aria-hidden="true">←</span>
               </Button>
             </motion.div>

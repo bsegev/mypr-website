@@ -133,7 +133,7 @@ export function AboutHero() {
                   hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5 border border-transparent hover:border-silver-200/20"
                 aria-label="קבע פגישת ייעוץ"
               >
-                לקביעת פגישת ייעוץ
+                פגישת ייעוץ
                 <span className="mr-2 text-lg group-hover:translate-x-1 transition-transform [color:black]" aria-hidden="true">←</span>
               </Button>
             </motion.div>

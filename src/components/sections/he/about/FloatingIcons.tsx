@@ -126,17 +126,47 @@ function FloatingIcon({
   id, 
   icon, 
   label, 
+  position,
   side,
   containerDimensions
 }: Icon & { 
   containerDimensions: { width: number; height: number };
   side: 'left' | 'right';
 }) {
+  const controls = useAnimationControls()
   const [isHovered, setIsHovered] = useState(false)
 
+  useEffect(() => {
+    if (containerDimensions.width > 0) {
+      const floatRange = 20
+      const xOffset = side === 'left' ? floatRange : -floatRange
+
+      controls.start({
+        x: [
+          position.x,
+          position.x + xOffset,
+          position.x
+        ],
+        y: [
+          position.y,
+          position.y + floatRange,
+          position.y
+        ],
+        transition: {
+          duration: 8 + (id % 3),
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "easeInOut"
+        }
+      })
+    }
+  }, [controls, position, containerDimensions, id, side])
+
   return (
-    <div
-      className="pointer-events-auto"
+    <motion.div
+      className="absolute pointer-events-auto"
+      animate={controls}
+      style={{ x: position.x, y: position.y }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -147,28 +177,19 @@ function FloatingIcon({
             ? 'bg-black-800/90 text-silver-100 ring-2 ring-silver-400/30 scale-125' 
             : 'bg-black-900/50 text-silver-400 hover:bg-black-800/70'
           }`}
-        animate={{
-          y: [0, 10, 0],
-          transition: {
-            duration: 4 + (id % 3),
-            repeat: Infinity,
-            repeatType: "mirror",
-            ease: "easeInOut"
-          }
-        }}
       >
         <div className="relative">
           {icon}
         </div>
-
-        {/* Tooltip - Adjusted for RTL layout */}
+        
+        {/* Tooltip */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
           className={`absolute whitespace-nowrap px-3 py-1.5
             bg-black-900/95 text-silver-100 text-sm font-montserrat rounded-md
-            border border-silver-400/10
-            ${side === 'left' ? 'right-full mr-3' : 'left-full ml-3'}`}
+            border border-silver-400/10 bottom-full mb-3
+            ${side === 'right' ? 'right-0' : 'left-0'}`}
         >
           {label}
         </motion.div>
@@ -180,6 +201,6 @@ function FloatingIcon({
           className="absolute inset-0 rounded-full bg-silver-400/20 blur-xl -z-10"
         />
       </motion.div>
-    </div>
+    </motion.div>
   )
 } 

@@ -73,7 +73,7 @@ export function AboutContact() {
             className="text-center space-y-4 mb-16"
           >
             <h2 id="about-contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-black-900">
-              Get to Know Me
+              Let's Connect
             </h2>
             <p className="text-lg md:text-xl text-black-900/60 font-inter font-light max-w-2xl mx-auto">
               Interested in learning more about my journey, methods, or how I can help your organization?

@@ -35,6 +35,9 @@ export function Footer() {
             >
               MYPR
             </Link>
+            <span className="text-sm text-silver-400 font-light">
+              יחסי ציבור & דיגיטל
+            </span>
 
             {/* Navigation */}
             <nav className="flex flex-wrap justify-center gap-6 md:gap-8" aria-label="Footer">
@@ -67,7 +70,7 @@ export function Footer() {
 
             {/* Copyright */}
             <p className="text-sm text-silver-400">
-              &copy; {new Date().getFullYear()} מיכאל ימיני יחסי ציבור ודיגיטל. כל הזכויות שמורות.
+              &copy; {new Date().getFullYear()} MYPR. All rights reserved
             </p>
           </div>
         </div>

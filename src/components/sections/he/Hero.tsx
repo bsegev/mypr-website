@@ -111,7 +111,7 @@ export default function Hero() {
               <div className="leading-[1.1] space-y-2">
                 <div className="text-[1.25rem] md:text-[1.5rem] lg:text-[1.75rem] leading-[1.1] text-silver-400">PR & DIGITAL</div>
                 <div className="text-display-sm md:text-display-md lg:text-display-lg font-medium leading-[1.1]">
-                  Your Brand, Our Strategy
+                  Your Brand. Our Strategy
                 </div>
               </div>
             </h1>

@@ -154,8 +154,8 @@ export function AboutIntro() {
                         <div className="flex items-start gap-3">
                           <div className="flex-shrink-0 w-7 h-7 rounded-full bg-silver-400/10 flex items-center justify-center text-silver-300 group-hover:bg-silver-400/20 group-hover:text-silver-200 transition-all duration-300">
                             {service.icon}
-                          </div>
-                          <div>
+                  </div>
+                  <div>
                             <h3 className="text-silver-200 text-sm font-medium mb-1 group-hover:text-silver-100 transition-colors">
                               {service.title}
                             </h3>

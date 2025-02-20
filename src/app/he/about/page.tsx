@@ -3,6 +3,7 @@ import { AboutHero } from '@/components/sections/he/about/AboutHero'
 import { AboutIntro } from '@/components/sections/he/about/AboutIntro'
 import { AboutValues } from '@/components/sections/he/about/AboutValues'
 import { AboutContact } from '@/components/sections/he/about/AboutContact'
+import { AboutTechnology } from '@/components/sections/he/about/AboutTechnology'
 
 export const metadata: Metadata = {
   title: 'אודות | מיכאל ימיני יחסי ציבור ודיגיטל',
@@ -50,6 +51,7 @@ export default function AboutPage() {
       <AboutHero />
       <AboutIntro />
       <AboutValues />
+      <AboutTechnology />
       <AboutContact />
     </main>
   )

@@ -9,7 +9,7 @@ import { useCalendar } from '@/lib/providers/CalendarProvider'
 const methods = [
     {
       title: "פגישת ייעוץ",
-      description: "לחצו לפתוח את לוח הזמנים",
+      description: "",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -25,12 +25,11 @@ const methods = [
     },
     {
       title: "התחברו בלינקדאין",
-      description: "לחצו להתחברות",
+      description: "",
       icon: (
-        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
       ),
+      type: "linkedin",
       href: "https://www.linkedin.com/in/michaelyemini/",
       buttonText: "michaelyemini",
     },
@@ -126,15 +125,22 @@ export function ContactMethods() {
                 role="listitem"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-black-900/5 flex items-center justify-center text-black-900" aria-hidden="true">
-                    {method.icon}
-                  </div>
-                  <h3 className="text-lg md:text-xl font-montserrat text-black-900">
-                    {method.title}
-                  </h3>
-                  <p className="text-body md:text-body-lg text-black-900/60 font-inter font-light">
-                    {method.description}
-                  </p>
+                  {method.type === 'linkedin' ? (
+                    <div className="flex justify-center items-center py-4">
+                      <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                    </div>
+                  ) : (
+                    <div className="w-12 h-12 rounded-full bg-black-900/5 flex items-center justify-center text-black-900" aria-hidden="true">
+                      {method.icon}
+                    </div>
+                  )}
+                  {method.type !== 'linkedin' && (
+                    <h3 className="text-lg md:text-xl font-montserrat text-black-900 mb-4">
+                      {method.title}
+                    </h3>
+                  )}
                   <div className="relative">
                     <Button 
                       {...getButtonProps(method)}

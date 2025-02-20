@@ -82,15 +82,15 @@ export function ContactHero() {
           variants={containerVariants}
           initial="initial"
           animate="animate"
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-center -mt-16"
         >
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
             <h1 id="contact-hero-heading" className="font-montserrat tracking-tight text-silver-100">
-              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block mb-4">
-                צרו קשר
+              <span className="text-[4rem] md:text-[5rem] lg:text-[6rem] uppercase leading-[1.1] block mb-8">
+                צור קשר
               </span>
-              <span className="text-xl md:text-2xl lg:text-3xl font-light block text-silver-400">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-light block text-silver-400">
                 יחד נעשה דברים גדולים
               </span>
             </h1>
