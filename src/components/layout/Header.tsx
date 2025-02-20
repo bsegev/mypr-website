@@ -155,7 +155,7 @@ export function Header() {
                 href={getHebrewPath(pathname)}
                 className="relative group px-4 py-1.5 border border-silver-400/20 rounded-full hover:border-silver-400/40 transition-colors"
               >
-                <span className="text-base font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors font-medium">
+                <span className="text-base font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors font-semibold">
                   עברית
                 </span>
               </Link>
@@ -168,7 +168,7 @@ export function Header() {
                 href={getHebrewPath(pathname)}
                 className="relative group px-4 py-1.5 border border-silver-400/20 rounded-full hover:border-silver-400/40 transition-colors"
               >
-                <span className="text-base font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors font-medium">
+                <span className="text-base font-montserrat tracking-wide text-silver-400 hover:text-silver-200 transition-colors font-semibold">
                   עברית
                 </span>
               </Link>
