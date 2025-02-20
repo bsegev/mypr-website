@@ -89,9 +89,6 @@ export default function Contact() {
             <h2 id="contact-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
             צור קשר
             </h2>
-            <p className="text-xl text-silver-400 font-inter font-light max-w-2xl mx-auto">
-              רוצה לקדם את העסק שלך? מעוניין לשפר את התדמית שלך?
-            </p>
           </motion.div>
 
           {/* Buttons fade in */}
