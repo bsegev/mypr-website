@@ -8,9 +8,8 @@ import { useCalendar } from '@/lib/providers/CalendarProvider'
 
 const methods = [
     {
-      title: "קביעת פגישה",
-      description:
-        "מעדיפים שיחה ישירה? קבעו פגישה של 45 דקות לדיון בצרכים שלכם.",
+      title: "פגישת ייעוץ",
+      description: "לחצו לפתוח את לוח הזמנים",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -26,20 +25,19 @@ const methods = [
     },
     {
       title: "התחברו בלינקדאין",
-      description:
-        "מעדיפים להתחבר מקצועית קודם? בואו נתחיל שיחה בלינקדאין.",
+      description: "לחצו להתחברות",
       icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
           <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
         </svg>
       ),
       href: "https://www.linkedin.com/in/michaelyemini/",
-      buttonText: "להתחברות",
+      buttonText: "michaelyemini",
     },
     {
-      title: "שליחת מייל",
+      title: "דואר אלקטרוני",
       description:
-        "מעדיפים מייל? שלחו לי הודעה ואחזור אליכם תוך 24 שעות.",
+        "כתבו לנו",
       icon: (
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -197,12 +195,39 @@ export function ContactMethods() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-center space-y-2 mt-16"
+            className="text-center mt-24"
           >
-            <address className="not-italic">
-              <p className="text-black-900/40 font-inter text-sm">ממוקם בתל אביב, ישראל</p>
-              <p className="text-black-900/40 font-inter text-sm">פועל בינלאומית</p>
-            </address>
+            <div className="inline-block w-full max-w-xl">
+              <h3 className="text-lg font-montserrat text-black-900 mb-4">המשרד שלנו</h3>
+              <a 
+                href="https://maps.app.goo.gl/XHNfeLF8jNFWk2va6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center px-8 py-6 rounded-xl bg-white border border-black-900/5 hover:border-black-900/10 transition-all duration-300
+                  hover:shadow-lg hover:shadow-black-900/5"
+              >
+                <div className="absolute left-8 opacity-0 group-hover:opacity-100 group-hover:-translate-x-2 transition-all">
+                  <svg className="w-5 h-5 text-black-900/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  </svg>
+                </div>
+
+                <div className="flex items-center gap-6 w-full">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-black-900/5 flex items-center justify-center text-black-900 group-hover:bg-black-900/10 transition-colors order-first" aria-hidden="true">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div className="text-right flex-grow">
+                    <div className="text-xl font-montserrat font-medium text-black-900 mb-1">WeWork Shoken</div>
+                    <div className="text-lg font-light text-black-900/60">שוקן 23, תל אביב-יפו</div>
+                  </div>
+                </div>
+
+                <div className="absolute bottom-0 right-0 left-0 h-px bg-gradient-to-r from-transparent via-black-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </Container>

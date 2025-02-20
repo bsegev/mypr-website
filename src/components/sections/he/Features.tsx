@@ -18,7 +18,7 @@ const features = [
     ),
   },
   {
-    title: "סושיאל מדיה",
+    title: "דיגיטל ורשתות חברתיות",
     href: "/he/services#digital-marketing",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -27,7 +27,7 @@ const features = [
     ),
   },
   {
-    title: " מאבקים ציבוריים וניהול משברים",
+    title: "ניהול משברים",
     href: "/he/services#crisis-management",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,17 +36,8 @@ const features = [
     ),
   },
   {
-    title: "תקשורת פוליטית",
-    href: "/he/services#media-outreach",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-      </svg>
-    ),
-  },
-  {
     title: "מיתוג עסקי",
-    href: "/he/services#content-creation",
+    href: "/he/services#branding",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
@@ -54,9 +45,17 @@ const features = [
     ),
   },
   {
-    title: "לחברות בחו״ל – הנציג העסקי שלכם בישראל",
-    href: "/he/services#featured-service",
-    featured: true,
+    title: "תקשורת פוליטית",
+    href: "/he/services#political",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+      </svg>
+    ),
+  },
+  {
+    title: "מאבקים ציבוריים",
+    href: "/he/services#public-campaigns",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -130,10 +129,10 @@ export default function Features() {
             className="text-center space-y-4"
           >
             <h2 id="expertise-heading" className="text-3xl md:text-4xl font-montserrat font-light tracking-wide text-silver-100">
-              מומחיות
+              מעטפת השירותים
             </h2>
             <p className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter">
-            אנחנו מובילים אסטרטגיות תקשורתיות חדשניות, המשלבות יחסי ציבור, דוברות ונוכחות חכמה ברשתות החברתיות, עם שליטה מלאה בזירה התקשורתית והדיגיטלית. מהקמת מותגים ועד ניהול משברים, מקמפיינים פוליטיים ועד עיצוב דעת קהל – אנו יוצרים מציאות.
+              במציאות תחרותית, מי שלא שולט בסיפור שלו ומקדם אותו – נשאר מאחור. אנחנו מציעים מעטפת אסטרטגית של שירותים שמעצבת מוניטין, מחזקת נוכחות ומייצרת השפעה.
             </p>
           </motion.div>
 
@@ -156,25 +155,15 @@ export default function Features() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className={`p-8 rounded-lg transition-all duration-300 ${
-                    feature.featured 
-                      ? 'bg-silver-100 hover:bg-silver-200/90' 
-                      : 'border border-silver-400/10 hover:border-silver-400/20'
-                  }`}
+                  className="p-8 rounded-lg border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300"
                 >
                   <motion.div 
-                    className={`w-12 h-12 mb-6 rounded-full flex items-center justify-center ${
-                      feature.featured
-                        ? 'bg-black-950 text-silver-100'
-                        : 'bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300'
-                    }`}
+                    className="w-12 h-12 mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300"
                     aria-hidden="true"
                   >
                     {feature.icon}
                   </motion.div>
-                  <h3 className={`text-xl font-montserrat font-medium ${
-                    feature.featured ? 'text-black-950' : 'text-silver-100'
-                  }`}>
+                  <h3 className="text-xl font-montserrat font-medium text-silver-100">
                     {feature.title}
                   </h3>
                 </motion.div>

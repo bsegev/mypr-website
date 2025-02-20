@@ -1,7 +1,5 @@
 import { Metadata } from 'next'
-import { ServicesHero } from '@/components/sections/he/services/ServicesHero'
 import { ServicesList } from '@/components/sections/he/services/ServicesList'
-import { FeaturedService } from '@/components/sections/he/services/FeaturedService'
 import { ProcessSection } from '@/components/sections/he/services/ProcessSection'
 import { ServicesContact } from '@/components/sections/he/services/ServicesContact'
 
@@ -55,8 +53,6 @@ export default function ServicesPage() {
   return (
     <main>
       <article>
-        <ServicesHero />
-        <FeaturedService />
         <ServicesList />
         <ProcessSection />
         <ServicesContact />

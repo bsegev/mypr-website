@@ -33,7 +33,7 @@ export function Footer() {
               href="/he"
               className="text-2xl tracking-[0.2em] font-light text-silver-100 hover:text-silver-200 transition-colors"
             >
-              מיכאל ימיני
+              MYPR
             </Link>
 
             {/* Navigation */}

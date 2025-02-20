@@ -86,27 +86,15 @@ export function ContactHero() {
         >
           {/* Main headline rises up */}
           <motion.div variants={fadeInUp}>
-            <span className="text-overline font-montserrat tracking-widest uppercase block mb-8 text-silver-400">
-              צרו קשר
-            </span>
             <h1 id="contact-hero-heading" className="font-montserrat tracking-tight text-silver-100">
-              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block">
-                בואו נתחבר
+              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] block mb-4">
+                צרו קשר
               </span>
-              <span className="text-display-sm md:text-display-md lg:text-display-lg uppercase leading-[1.1] font-light block">
-                ונעשה <span className="font-semibold">דברים גדולים</span>
+              <span className="text-xl md:text-2xl lg:text-3xl font-light block text-silver-400">
+                יחד נעשה דברים גדולים
               </span>
             </h1>
           </motion.div>
-
-          {/* Subheading fades in */}
-          <motion.p 
-            variants={fadeInUp}
-            className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-8"
-            role="doc-subtitle"
-          >
-            בין אם אתם בתל אביב או בחו״ל, אני כאן כדי לעזור לכם להשיג את המטרות שלכם. בואו נדבר עסקים.
-          </motion.p>
         </motion.div>
       </Container>
 

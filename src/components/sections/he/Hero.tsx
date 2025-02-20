@@ -122,7 +122,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="text-lg md:text-xl text-silver-400 max-w-2xl mx-auto font-inter font-light leading-relaxed mt-8"
           >
-            יחסי ציבור מקיפים, ניהול משברים ואסטרטגיה דיגיטלית לבעלי עסקים, מנכ״לים ומנהלי תקשורת.
+            תקשורת, יחסי ציבור, רשתות חברתיות ודיגיטל, ניהול משברים וקמפיינים פוליטיים 
           </motion.p>
 
           {/* Buttons fade in last */}
@@ -136,14 +136,14 @@ export default function Hero() {
               className="min-w-[240px] bg-white hover:bg-silver-50 [color:black] hover:[color:black] font-montserrat font-medium tracking-wide text-sm transition-all duration-300 rounded-full
                 hover:shadow-lg hover:shadow-silver-500/10 hover:-translate-y-0.5 border border-transparent hover:border-silver-200/20"
             >
-              קביעת פגישת ייעוץ
+              פגישת ייעוץ
               <span className="mr-2 text-lg group-hover:translate-x-1 transition-transform [color:black]">←</span>
             </Button>
             <Link 
               href="/he/about"
               className="group text-silver-400 hover:text-silver-200 !important transition-colors duration-300 text-sm font-montserrat tracking-widest flex items-center gap-2"
             >
-              למידע נוסף על MYPR
+              למידע נוסף
               <motion.span 
                 className="text-xl text-silver-400 group-hover:text-silver-200"
                 animate={{ x: [0, -3, 0] }}
