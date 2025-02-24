@@ -104,7 +104,7 @@ export default function Contact() {
             >
               <Button 
                 onClick={handleScheduleClick}
-                className="group relative overflow-hidden bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-sm transition-all duration-300"
+                className="group relative overflow-hidden bg-silver-100 hover:bg-silver-200 text-black-950 px-8 py-4 font-montserrat font-medium tracking-wide uppercase text-base transition-all duration-300"
                 aria-label="קביעת פגישה"
               >
                 קביעת פגישה
@@ -118,7 +118,7 @@ export default function Contact() {
             >
               <Button
                 href="https://www.linkedin.com/in/michaelyemini/"
-                className="group inline-flex items-center gap-2 bg-transparent text-silver-400 hover:text-silver-200 font-montserrat tracking-wide text-sm transition-colors duration-300"
+                className="group inline-flex items-center gap-2 bg-transparent text-silver-400 hover:text-silver-200 font-montserrat tracking-wide text-base transition-colors duration-300"
                 aria-label="Connect on LinkedIn"
               >
                 Connect on LinkedIn
