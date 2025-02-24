@@ -155,15 +155,15 @@ export default function Features() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="p-8 rounded-lg border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300"
+                  className="p-8 rounded-lg border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300 flex flex-row-reverse items-center gap-6"
                 >
                   <motion.div 
-                    className="w-12 h-12 mb-6 rounded-full flex items-center justify-center bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300"
+                    className="flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center bg-gradient-to-br from-silver-400/20 to-transparent text-silver-300"
                     aria-hidden="true"
                   >
                     {feature.icon}
                   </motion.div>
-                  <h3 className="text-xl font-montserrat font-medium text-silver-100">
+                  <h3 className="text-xl font-montserrat font-medium text-silver-100 flex-grow text-right">
                     {feature.title}
                   </h3>
                 </motion.div>

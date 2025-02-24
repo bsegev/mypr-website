@@ -145,7 +145,7 @@ export function ServicesContact() {
                 key={service.title}
                 variants={serviceVariants}
                 custom={index}
-                className="group relative p-6 rounded-lg bg-black-900/50 border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300"
+                className="group relative p-6 rounded-lg bg-black-900/50 border border-silver-400/10 hover:border-silver-400/20 transition-all duration-300 flex flex-col h-full"
                 role="listitem"
               >
                 <motion.div 
@@ -161,22 +161,24 @@ export function ServicesContact() {
                     {service.duration}
                   </span>
                 </motion.div>
-                <p className="text-silver-400 font-inter font-light text-sm mb-6">
+                <p className="text-silver-400 font-inter font-light text-sm">
                   {service.description}
                 </p>
-                <motion.div
-                  whileHover={{ y: -2 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <Button 
-                    onClick={() => handleScheduleClick(service.calLink)}
-                    className="w-full bg-transparent border border-silver-400/20 hover:border-silver-400/40 text-silver-100 py-2 font-montserrat tracking-wide text-sm transition-all duration-300
-                      hover:bg-silver-400/5"
-                    aria-label={`קבע פגישת ${service.duration} ל${service.title}`}
+                <div className="mt-auto pt-6">
+                  <motion.div
+                    whileHover={{ y: -2 }}
+                    transition={{ duration: 0.2 }}
                   >
-                    לקביעת פגישה
-                  </Button>
-                </motion.div>
+                    <Button 
+                      onClick={() => handleScheduleClick(service.calLink)}
+                      className="w-full bg-transparent border border-silver-400/20 hover:border-silver-400/40 text-silver-100 py-2 font-montserrat tracking-wide text-sm transition-all duration-300
+                        hover:bg-silver-400/5"
+                      aria-label={`קבע פגישת ${service.duration} ל${service.title}`}
+                    >
+                      לקביעת פגישה
+                    </Button>
+                  </motion.div>
+                </div>
                 <motion.div 
                   className="absolute bottom-0 right-0 left-0 h-px bg-gradient-to-l from-transparent via-silver-400/20 to-transparent"
                   initial={{ scaleX: 0 }}
